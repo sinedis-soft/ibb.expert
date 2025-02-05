@@ -1,0 +1,1 @@
+{"version":3,"sources":["_settings.scss"],"names":[],"mappings":"AAAA,KACE,mBAAA,CAAA,mBAAA,CAAA,YAAA,CACA,gBAAA,CACA,2BAAA,CAAA,4BAAA,CAAA,yBAAA,CAAA,qBAAA,CAGF,KACE,kBAAA,CAAA,UAAA,CAAA,MAAA","file":"main.css","sourcesContent":["body {\n  display: flex;\n  min-height: 100vh;\n  flex-direction: column;\n}\n\nmain {\n  flex: 1;\n}\n"]}

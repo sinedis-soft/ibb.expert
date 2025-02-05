@@ -1,0 +1,8 @@
+// базовые подключения
+@use "vars";
+@use "mixins";
+@use "fonts";
+@use "settings";
+
+// подключения компонентов страницы
+@use "./components/header";
