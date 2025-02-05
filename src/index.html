@@ -4,7 +4,28 @@
 
   <body>
     @include('partials/header.html')
-    <main class="main"></main>
+    <main class="main">
+      <main class="main">
+        @include('partials/hero.html')
+        <!-- Главный экран с УТП -->
+        @include('partials/about.html')
+        <!-- О компании / продукте -->
+        @include('partials/features.html')
+        <!-- Фичи, ключевые особенности -->
+        @include('partials/benefits.html')
+        <!-- Преимущества использования -->
+        @include('partials/how-it-works.html')
+        <!-- Как это работает -->
+        @include('partials/services.html')
+        <!-- Услуги (если актуально) -->
+        @include('partials/testemonials.html')
+        <!-- Отзывы клиентов -->
+        @include('partials/faq.html')
+        <!-- Часто задаваемые вопросы -->
+        @include('partials/cta.html')
+        <!-- Призыв к действию -->
+      </main>
+    </main>
     @include('partials/footer.html')
     <!-- @include('html/h1.html') пример include -->
   </body>
