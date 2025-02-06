@@ -13,4 +13,8 @@ main {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
+}
+
+.hero-text-shadow {
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), -2px -2px 5px rgba(0, 0, 0, 0.7);
 }/*# sourceMappingURL=main.css.map */
