@@ -21,17 +21,11 @@ main {
 }
 
 .section-shadow-border {
-  -webkit-box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 -4px 4px rgba(150, 150, 150, 0.3);
+  box-shadow: 0 -4px 4px rgba(150, 150, 150, 0.3);
   border-bottom: 1px solid #dee2e6;
 }
 
 .hero-text-shadow {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), -2px -2px 5px rgba(0, 0, 0, 0.7);
-}
-
-.section-shadow-border {
-  -webkit-box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.3);
-  border-bottom: 1px solid #dee2e6;
 }/*# sourceMappingURL=main.css.map */
