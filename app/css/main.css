@@ -45,22 +45,22 @@ main {
   transition: 0.3s, background-size 0.3s 0.3s;
 }
 
-@media (hover: hover) {
-  .button-custom:hover {
-    --d: 100%;
-    background-position: 50% 0%;
-    color: #000;
-    -webkit-transition: 0.3s, background-position 0.3s 0.3s, color 0.3s 0.3s;
-    transition: 0.3s, background-position 0.3s 0.3s, color 0.3s 0.3s;
-  }
-  .button-custom-dark:hover {
-    --d: 100%;
-    background-position: 50% 0%;
-    color: #fff;
-    -webkit-transition: 0.3s, background-position 0.3s 0.3s, color 0.3s 0.3s;
-    transition: 0.3s, background-position 0.3s 0.3s, color 0.3s 0.3s;
-  }
+.button-custom:hover {
+  --d: 100%;
+  background-position: 50% 0%;
+  color: #000;
+  -webkit-transition: 0.3s, background-position 0.3s 0.3s, color 0.3s 0.3s;
+  transition: 0.3s, background-position 0.3s 0.3s, color 0.3s 0.3s;
 }
+
+.button-custom-dark:hover {
+  --d: 100%;
+  background-position: 50% 0%;
+  color: #fff;
+  -webkit-transition: 0.3s, background-position 0.3s 0.3s, color 0.3s 0.3s;
+  transition: 0.3s, background-position 0.3s 0.3s, color 0.3s 0.3s;
+}
+
 .hero-text-shadow {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), -2px -2px 5px rgba(0, 0, 0, 0.7);
 }/*# sourceMappingURL=main.css.map */
