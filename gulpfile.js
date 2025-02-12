@@ -4,7 +4,11 @@ import browserSync from "browser-sync";
 import { paths } from "./gulp/config/paths.js";
 import { clean } from "./gulp/tasks/clean.js";
 import { svgSprites } from "./gulp/tasks/sprite.js";
-import { generateCriticalCss, styles } from "./gulp/tasks/styles.js";
+import {
+  generateCriticalCss,
+  purgeVendorCss,
+  styles,
+} from "./gulp/tasks/styles.js";
 import { stylesBackend } from "./gulp/tasks/styles-backend.js";
 import { scripts } from "./gulp/tasks/scripts.js";
 import { scriptsBackend } from "./gulp/tasks/scripts-backend.js";
@@ -48,6 +52,7 @@ const dev = gulp.series(
   scripts,
   styles,
   generateCriticalCss,
+  purgeVendorCss,
   resources,
   images,
   webpImages,
@@ -69,6 +74,8 @@ const build = gulp.series(
   htmlInclude,
   scripts,
   styles,
+  generateCriticalCss,
+  purgeVendorCss,
   resources,
   images,
   webpImages,
