@@ -63,4 +63,32 @@ main {
 
 .hero-text-shadow {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), -2px -2px 5px rgba(0, 0, 0, 0.7);
+}
+
+@-webkit-keyframes moveBackground {
+  0% {
+    background-position: center top;
+  }
+  50% {
+    background-position: center bottom;
+  }
+  100% {
+    background-position: center top;
+  }
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: center top;
+  }
+  50% {
+    background-position: center bottom;
+  }
+  100% {
+    background-position: center top;
+  }
+}
+.hero {
+  -webkit-animation: moveBackground 10s infinite alternate linear;
+  animation: moveBackground 10s infinite alternate linear;
 }/*# sourceMappingURL=main.css.map */
