@@ -77,7 +77,7 @@
         <img
           width="50"
           height="45"
-          class=""
+          loading="eager"
           src="../img/svg/logo.svg"
           alt="Логотип ibb.expert"
         />
@@ -730,7 +730,6 @@
             я <strong>сэкономил 40% времени</strong> на оформлении страховок,
             получил <em>выгодные условия</em> и теперь
             <strong>не переживаю за покрытие рисков</strong> при каждом рейсе.
-
             <small
               >*Все страховки соответствуют требованиям стран транзита.</small
             >
@@ -794,9 +793,9 @@
 >
   <div class="container">
     <div class="row justify-content-center text-center mb-3">
-      <div class="col-lg-8 col-xl-7">
-        <h2 class="display-5 fw-bold">Часто задаваемые вопросы</h2>
-        <p class="lead">
+      <div class="col-10">
+        <h2 class="display-2 fw-bold">Часто задаваемые вопросы</h2>
+        <p class="lead-custom">
           Мы собрали самые часто задаваемые вопросы, чтобы помочь вам быстрее
           найти ответы. Если у вас есть другие вопросы, мы всегда рады помочь!
         </p>
@@ -1060,38 +1059,37 @@
   </div>
 </section>
 
-      <section class="py-5">
+      <section class="py-5" aria-labelledby="cta-heading">
   <div class="container">
     <div class="row">
-      <div class="col-lg-6">
-        <h2 class="display-5 fw-bold">Request a Callback</h2>
-        <form class="d-flex pt-4 me-lg-5">
-          <input
-            aria-label="input"
-            class="form-control me-2"
-            placeholder="Telephone Number"
-            type="tel"
-          />
-          <button class="btn btn-primary text-nowrap" type="submit">
-            Call Me
-          </button>
-        </form>
-      </div>
-      <div class="col-lg-6 mt-4 mt-lg-0">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam feugiat
-          erat quis pulvinar semper. Cras commodo vitae libero ut consequat.
+      <div class="col-lg-12 mt-4 mt-lg-0">
+        <h2 id="cta-heading" class="display-2 fw-bold mb-5 text-center">
+          Свяжитесь с нами
+        </h2>
+        <p class="lead-custom mb-4">
+          Мы уверены, что совместными усилиями мы сможем создать
+          <strong>надежную</strong> и <strong>эффективную</strong> систему
+          страхования для международных автоперевозок и грузоотправителей.
+          Присоединяйтесь к нашей сети и давайте вместе обеспечим
+          <em>безопасность</em> и <em>стабильность</em> вашего бизнеса в
+          процессе перевозок между Европой и Азией. Мы готовы предложить вам
+          <strong>комплексные решения</strong>, которые помогут снизить риски и
+          <small>оптимизировать расходы</small> на страхование.
+          <strong>Готовы к сотрудничеству?</strong> Свяжитесь с нами, и мы
+          обсудим, как наши эксперты могут поддержать ваш бизнес на пути к
+          общему успеху!
         </p>
-        <div class="d-lg-flex text-primary mt-3 mt-lg-5">
+
+        <div class="flex flex-column align-items-center text-primary">
           <a
-            class="text-decoration-none me-4 fs-5 fw-bold"
+            class="d-block text-center text-decoration-none mb-3 fs-1 fw-bold"
             href="tel:+1(234)%20567-89-01"
             >+1(234) 567-89-10</a
           >
           <a
-            class="text-decoration-none fs-5 fw-bold"
-            href="mailto:info@collector.com"
-            >hello@yourdomain.com</a
+            class="d-block text-center text-decoration-none fs-1 fw-bold"
+            href="mailto:info@ibb.expert"
+            >info@ibb.expert</a
           >
         </div>
       </div>
@@ -1100,28 +1098,45 @@
 </section>
 
     </main>
-    <div class="container">
-  <footer class="py-3 my-4">
+    <footer class="py-3 my-4">
+  <div class="container">
     <ul class="nav justify-content-center border-bottom pb-3 mb-3">
       <li class="nav-item">
-        <a href="#" class="nav-link px-2 text-body-secondary">Home</a>
+        <a href="#" class="nav-link px-2 text-body-secondary">В начало</a>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link px-2 text-body-secondary">Features</a>
+        <a href="#" class="nav-link px-2 text-body-secondary">О нас</a>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link px-2 text-body-secondary">Pricing</a>
+        <a href="#" class="nav-link px-2 text-body-secondary"
+          >Наши преимущества</a
+        >
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link px-2 text-body-secondary">FAQs</a>
+        <a href="#" class="nav-link px-2 text-body-secondary"
+          >Виды страхования</a
+        >
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link px-2 text-body-secondary">About</a>
+        <a href="#" class="nav-link px-2 text-body-secondary">Почему мы?</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link px-2 text-body-secondary"
+          >Как это работает</a
+        >
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link px-2 text-body-secondary">Отзывы</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link px-2 text-body-secondary"
+          >Часто задаваемые вопросы</a
+        >
       </li>
     </ul>
-    <p class="text-center text-body-secondary">© 2024 Company, Inc</p>
-  </footer>
-</div>
+    <p class="text-center text-body-secondary">© 2025 IBB.EXPERT</p>
+  </div>
+</footer>
 
   </body>
 </html>
