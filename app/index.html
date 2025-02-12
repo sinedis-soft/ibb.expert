@@ -1,1142 +1,1979 @@
 <!DOCTYPE html>
 <html lang="ru" class="page">
   <head>
-  <!-- Кодировка -->
-  <meta charset="UTF-8" />
+    <!-- Кодировка -->
+    <meta charset="UTF-8" />
 
-  <!-- Адаптивность -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Адаптивность -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Совместимость с IE -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Совместимость с IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <!-- Основные мета-теги SEO -->
-  <title>IBB.EXPERT</title>
-  <meta
-    name="description"
-    content="Краткое описание сайта (до 160 символов)."
-  />
-  <meta name="keywords" content="ключевые, слова, через, запятую" />
-  <meta name="author" content="Ваше имя или название компании" />
+    <!-- Основные мета-теги SEO -->
+    <title>IBB.EXPERT</title>
+    <meta
+      name="description"
+      content="Краткое описание сайта (до 160 символов)."
+    />
+    <meta name="keywords" content="ключевые, слова, через, запятую" />
+    <meta name="author" content="Ваше имя или название компании" />
 
-  <!-- Open Graph (для соцсетей) -->
-  <meta property="og:title" content="IBB.EXPERT" />
-  <meta property="og:description" content="Краткое описание сайта." />
-  <meta property="og:image" content="og-preview.png" />
-  <meta property="og:url" content="https://example.com" />
-  <meta property="og:type" content="website" />
+    <!-- Open Graph (для соцсетей) -->
+    <meta property="og:title" content="IBB.EXPERT" />
+    <meta property="og:description" content="Краткое описание сайта." />
+    <meta property="og:image" content="og-preview.png" />
+    <meta property="og:url" content="https://example.com" />
+    <meta property="og:type" content="website" />
 
-  <!-- Twitter Cards -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="IBB.EXPERT" />
-  <meta name="twitter:description" content="Краткое описание сайта." />
-  <meta name="twitter:image" content="twitter-preview.jpg" />
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="IBB.EXPERT" />
+    <meta name="twitter:description" content="Краткое описание сайта." />
+    <meta name="twitter:image" content="twitter-preview.jpg" />
 
-  <!-- Favicon и иконки для устройств -->
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-  <link rel="manifest" href="site.webmanifest" />
-  <meta name="theme-color" content="#FFF" />
+    <!-- Favicon и иконки для устройств -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#FFF" />
 
-  <!-- Canonical URL (для избежания дубликатов страниц) -->
-  <!-- <link rel="canonical" href="https://example.com" /> -->
+    <!-- Canonical URL (для избежания дубликатов страниц) -->
+    <!-- <link rel="canonical" href="https://example.com" /> -->
 
-  <!-- Preload, Prefetch, Preconnect -->
-  <link rel="preload" href="../img/hero.webp" as="image" fetchpriority="high" />
-  <link
-    rel="preload"
-    href="../img/svg/logo.svg"
-    as="image"
-    fetchpriority="high"
-  />
+    <!-- Preload, Prefetch, Preconnect -->
+    <link
+      rel="preload"
+      href="../img/hero.webp"
+      as="image"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      href="../img/svg/logo.svg"
+      as="image"
+      fetchpriority="high"
+    />
 
-  <!-- Подключение стилей -->
-  <link rel="stylesheet" href="css/vendor.css" />
-  <link rel="stylesheet" href="css/main.css" />
+    <!-- Подключение стилей -->
+    <style>
+      @charset "UTF-8";
+      body {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        min-height: 100vh;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+      }
+      main {
+        padding-top: 71px;
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+      }
+      .button-custom {
+        color: #fff;
+        border: 1px solid #fff;
+        background: -webkit-gradient(
+            linear,
+            left top,
+            left bottom,
+            color-stop(0, #fff)
+          )
+          0 calc(-3px - 100%) / var(--d, 0) 200% no-repeat;
+        background: linear-gradient(#fff 0 0) 0 calc(-3px - 100%) / var(--d, 0)
+          200% no-repeat;
+      }
+      .hero-text-shadow {
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7),
+          -2px -2px 5px rgba(0, 0, 0, 0.7);
+      }
+      :root {
+        --bs-blue: #0d6efd;
+        --bs-indigo: #6610f2;
+        --bs-purple: #6f42c1;
+        --bs-pink: #d63384;
+        --bs-red: #dc3545;
+        --bs-orange: #fd7e14;
+        --bs-yellow: #ffc107;
+        --bs-green: #198754;
+        --bs-teal: #20c997;
+        --bs-cyan: #0dcaf0;
+        --bs-black: #000;
+        --bs-white: #fff;
+        --bs-gray: #6c757d;
+        --bs-gray-dark: #343a40;
+        --bs-gray-100: #f8f9fa;
+        --bs-gray-200: #e9ecef;
+        --bs-gray-300: #dee2e6;
+        --bs-gray-400: #ced4da;
+        --bs-gray-500: #adb5bd;
+        --bs-gray-600: #6c757d;
+        --bs-gray-700: #495057;
+        --bs-gray-800: #343a40;
+        --bs-gray-900: #212529;
+        --bs-primary: #0d6efd;
+        --bs-secondary: #6c757d;
+        --bs-success: #198754;
+        --bs-info: #0dcaf0;
+        --bs-warning: #ffc107;
+        --bs-danger: #dc3545;
+        --bs-light: #f8f9fa;
+        --bs-dark: #212529;
+        --bs-primary-rgb: 13, 110, 253;
+        --bs-secondary-rgb: 108, 117, 125;
+        --bs-success-rgb: 25, 135, 84;
+        --bs-info-rgb: 13, 202, 240;
+        --bs-warning-rgb: 255, 193, 7;
+        --bs-danger-rgb: 220, 53, 69;
+        --bs-light-rgb: 248, 249, 250;
+        --bs-dark-rgb: 33, 37, 41;
+        --bs-primary-text-emphasis: rgb(5.2, 44, 101.2);
+        --bs-secondary-text-emphasis: rgb(43.2, 46.8, 50);
+        --bs-success-text-emphasis: rgb(10, 54, 33.6);
+        --bs-info-text-emphasis: rgb(5.2, 80.8, 96);
+        --bs-warning-text-emphasis: rgb(102, 77.2, 2.8);
+        --bs-danger-text-emphasis: rgb(88, 21.2, 27.6);
+        --bs-light-text-emphasis: #495057;
+        --bs-dark-text-emphasis: #495057;
+        --bs-primary-bg-subtle: rgb(206.6, 226, 254.6);
+        --bs-secondary-bg-subtle: rgb(225.6, 227.4, 229);
+        --bs-success-bg-subtle: rgb(209, 231, 220.8);
+        --bs-info-bg-subtle: rgb(206.6, 244.4, 252);
+        --bs-warning-bg-subtle: rgb(255, 242.6, 205.4);
+        --bs-danger-bg-subtle: rgb(248, 214.6, 217.8);
+        --bs-light-bg-subtle: rgb(251.5, 252, 252.5);
+        --bs-dark-bg-subtle: #ced4da;
+        --bs-primary-border-subtle: rgb(158.2, 197, 254.2);
+        --bs-secondary-border-subtle: rgb(196.2, 199.8, 203);
+        --bs-success-border-subtle: rgb(163, 207, 186.6);
+        --bs-info-border-subtle: rgb(158.2, 233.8, 249);
+        --bs-warning-border-subtle: rgb(255, 230.2, 155.8);
+        --bs-danger-border-subtle: rgb(241, 174.2, 180.6);
+        --bs-light-border-subtle: #e9ecef;
+        --bs-dark-border-subtle: #adb5bd;
+        --bs-white-rgb: 255, 255, 255;
+        --bs-black-rgb: 0, 0, 0;
+        --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif,
+          "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+          "Noto Color Emoji";
+        --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", "Courier New", monospace;
+        --bs-gradient: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.15),
+          rgba(255, 255, 255, 0)
+        );
+        --bs-body-font-family: var(--bs-font-sans-serif);
+        --bs-body-font-size: 1rem;
+        --bs-body-font-weight: 400;
+        --bs-body-line-height: 1.5;
+        --bs-body-color: #212529;
+        --bs-body-color-rgb: 33, 37, 41;
+        --bs-body-bg: #fff;
+        --bs-body-bg-rgb: 255, 255, 255;
+        --bs-emphasis-color: #000;
+        --bs-emphasis-color-rgb: 0, 0, 0;
+        --bs-secondary-color: rgba(33, 37, 41, 0.75);
+        --bs-secondary-color-rgb: 33, 37, 41;
+        --bs-secondary-bg: #e9ecef;
+        --bs-secondary-bg-rgb: 233, 236, 239;
+        --bs-tertiary-color: rgba(33, 37, 41, 0.5);
+        --bs-tertiary-color-rgb: 33, 37, 41;
+        --bs-tertiary-bg: #f8f9fa;
+        --bs-tertiary-bg-rgb: 248, 249, 250;
+        --bs-heading-color: inherit;
+        --bs-link-color: #0d6efd;
+        --bs-link-color-rgb: 13, 110, 253;
+        --bs-link-decoration: underline;
+        --bs-link-hover-color: rgb(10.4, 88, 202.4);
+        --bs-link-hover-color-rgb: 10, 88, 202;
+        --bs-code-color: #d63384;
+        --bs-highlight-color: #212529;
+        --bs-highlight-bg: rgb(255, 242.6, 205.4);
+        --bs-border-width: 1px;
+        --bs-border-style: solid;
+        --bs-border-color: #dee2e6;
+        --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
+        --bs-border-radius: 0.375rem;
+        --bs-border-radius-sm: 0.25rem;
+        --bs-border-radius-lg: 0.5rem;
+        --bs-border-radius-xl: 1rem;
+        --bs-border-radius-xxl: 2rem;
+        --bs-border-radius-2xl: var(--bs-border-radius-xxl);
+        --bs-border-radius-pill: 50rem;
+        --bs-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        --bs-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        --bs-box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+        --bs-box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+        --bs-focus-ring-width: 0.25rem;
+        --bs-focus-ring-opacity: 0.25;
+        --bs-focus-ring-color: rgba(13, 110, 253, 0.25);
+        --bs-form-valid-color: #198754;
+        --bs-form-valid-border-color: #198754;
+        --bs-form-invalid-color: #dc3545;
+        --bs-form-invalid-border-color: #dc3545;
+      }
+      *,
+      ::after,
+      ::before {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        :root {
+          scroll-behavior: smooth;
+        }
+      }
+      body {
+        margin: 0;
+        font-family: var(--bs-body-font-family);
+        font-size: var(--bs-body-font-size);
+        font-weight: var(--bs-body-font-weight);
+        line-height: var(--bs-body-line-height);
+        color: var(--bs-body-color);
+        text-align: var(--bs-body-text-align);
+        background-color: var(--bs-body-bg);
+        -webkit-text-size-adjust: 100%;
+      }
+      hr {
+        margin: 1rem 0;
+        color: inherit;
+        border: 0;
+        border-top: var(--bs-border-width) solid;
+        opacity: 0.25;
+      }
+      h1,
+      h5 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        line-height: 1.2;
+        color: var(--bs-heading-color);
+      }
+      h1 {
+        font-size: calc(1.375rem + 1.5vw);
+      }
+      @media (min-width: 1200px) {
+        h1 {
+          font-size: 2.5rem;
+        }
+      }
+      h5 {
+        font-size: 1.25rem;
+      }
+      p {
+        margin-top: 0;
+        margin-bottom: 1rem;
+      }
+      ul {
+        padding-left: 2rem;
+      }
+      ul {
+        margin-top: 0;
+        margin-bottom: 1rem;
+      }
+      ul ul {
+        margin-bottom: 0;
+      }
+      a {
+        color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+        text-decoration: underline;
+      }
+      img {
+        vertical-align: middle;
+      }
+      button {
+        border-radius: 0;
+      }
+      button {
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+      }
+      button {
+        text-transform: none;
+      }
+      [type="button"],
+      button {
+        -webkit-appearance: button;
+      }
+      ::-moz-focus-inner {
+        padding: 0;
+        border-style: none;
+      }
+      ::-webkit-datetime-edit-day-field,
+      ::-webkit-datetime-edit-fields-wrapper,
+      ::-webkit-datetime-edit-hour-field,
+      ::-webkit-datetime-edit-minute,
+      ::-webkit-datetime-edit-month-field,
+      ::-webkit-datetime-edit-text,
+      ::-webkit-datetime-edit-year-field {
+        padding: 0;
+      }
+      ::-webkit-inner-spin-button {
+        height: auto;
+      }
+      ::-webkit-search-decoration {
+        -webkit-appearance: none;
+      }
+      ::-webkit-color-swatch-wrapper {
+        padding: 0;
+      }
+      ::-webkit-file-upload-button {
+        font: inherit;
+        -webkit-appearance: button;
+      }
+      ::file-selector-button {
+        font: inherit;
+        -webkit-appearance: button;
+      }
+      .display-3 {
+        font-size: calc(1.525rem + 3.3vw);
+        font-weight: 300;
+        line-height: 1.2;
+      }
+      @media (min-width: 1200px) {
+        .display-3 {
+          font-size: 4rem;
+        }
+      }
+      .display-6 {
+        font-size: calc(1.375rem + 1.5vw);
+        font-weight: 300;
+        line-height: 1.2;
+      }
+      @media (min-width: 1200px) {
+        .display-6 {
+          font-size: 2.5rem;
+        }
+      }
+      .container-fluid {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 0;
+        width: 100%;
+        padding-right: calc(var(--bs-gutter-x) * 0.5);
+        padding-left: calc(var(--bs-gutter-x) * 0.5);
+        margin-right: auto;
+        margin-left: auto;
+      }
+      :root {
+        --bs-breakpoint-xs: 0;
+        --bs-breakpoint-sm: 576px;
+        --bs-breakpoint-md: 768px;
+        --bs-breakpoint-lg: 992px;
+        --bs-breakpoint-xl: 1200px;
+        --bs-breakpoint-xxl: 1400px;
+      }
+      @media (min-width: 992px) {
+        .col-lg-10 {
+          -webkit-box-flex: 0;
+          -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+          width: 83.33333333%;
+        }
+      }
+      .btn {
+        --bs-btn-padding-x: 0.75rem;
+        --bs-btn-padding-y: 0.375rem;
+        --bs-btn-font-family: ;
+        --bs-btn-font-size: 1rem;
+        --bs-btn-font-weight: 400;
+        --bs-btn-line-height: 1.5;
+        --bs-btn-color: var(--bs-body-color);
+        --bs-btn-bg: transparent;
+        --bs-btn-border-width: var(--bs-border-width);
+        --bs-btn-border-color: transparent;
+        --bs-btn-border-radius: var(--bs-border-radius);
+        --bs-btn-hover-border-color: transparent;
+        --bs-btn-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15),
+          0 1px 1px rgba(0, 0, 0, 0.075);
+        --bs-btn-disabled-opacity: 0.65;
+        --bs-btn-focus-box-shadow: 0 0 0 0.25rem
+          rgba(var(--bs-btn-focus-shadow-rgb), 0.5);
+        display: inline-block;
+        padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
+        font-family: var(--bs-btn-font-family);
+        font-size: var(--bs-btn-font-size);
+        font-weight: var(--bs-btn-font-weight);
+        line-height: var(--bs-btn-line-height);
+        color: var(--bs-btn-color);
+        text-align: center;
+        text-decoration: none;
+        vertical-align: middle;
+        border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
+        border-radius: var(--bs-btn-border-radius);
+        background-color: var(--bs-btn-bg);
+      }
+      .btn-lg {
+        --bs-btn-padding-y: 0.5rem;
+        --bs-btn-padding-x: 1rem;
+        --bs-btn-font-size: 1.25rem;
+        --bs-btn-border-radius: var(--bs-border-radius-lg);
+      }
+      .collapse:not(.show) {
+        display: none;
+      }
+      .dropdown {
+        position: relative;
+      }
+      .dropdown-toggle {
+        white-space: nowrap;
+      }
+      .dropdown-toggle::after {
+        display: inline-block;
+        margin-left: 0.255em;
+        vertical-align: 0.255em;
+        content: "";
+        border-top: 0.3em solid;
+        border-right: 0.3em solid transparent;
+        border-bottom: 0;
+        border-left: 0.3em solid transparent;
+      }
+      .dropdown-menu {
+        --bs-dropdown-zindex: 1000;
+        --bs-dropdown-min-width: 10rem;
+        --bs-dropdown-padding-x: 0;
+        --bs-dropdown-padding-y: 0.5rem;
+        --bs-dropdown-spacer: 0.125rem;
+        --bs-dropdown-font-size: 1rem;
+        --bs-dropdown-color: var(--bs-body-color);
+        --bs-dropdown-bg: var(--bs-body-bg);
+        --bs-dropdown-border-color: var(--bs-border-color-translucent);
+        --bs-dropdown-border-radius: var(--bs-border-radius);
+        --bs-dropdown-border-width: var(--bs-border-width);
+        --bs-dropdown-inner-border-radius: calc(
+          var(--bs-border-radius) - var(--bs-border-width)
+        );
+        --bs-dropdown-divider-bg: var(--bs-border-color-translucent);
+        --bs-dropdown-divider-margin-y: 0.5rem;
+        --bs-dropdown-box-shadow: var(--bs-box-shadow);
+        --bs-dropdown-link-color: var(--bs-body-color);
+        --bs-dropdown-link-hover-color: var(--bs-body-color);
+        --bs-dropdown-link-hover-bg: var(--bs-tertiary-bg);
+        --bs-dropdown-link-active-color: #fff;
+        --bs-dropdown-link-active-bg: #0d6efd;
+        --bs-dropdown-link-disabled-color: var(--bs-tertiary-color);
+        --bs-dropdown-item-padding-x: 1rem;
+        --bs-dropdown-item-padding-y: 0.25rem;
+        --bs-dropdown-header-color: #6c757d;
+        --bs-dropdown-header-padding-x: 1rem;
+        --bs-dropdown-header-padding-y: 0.5rem;
+        position: absolute;
+        z-index: var(--bs-dropdown-zindex);
+        display: none;
+        min-width: var(--bs-dropdown-min-width);
+        padding: var(--bs-dropdown-padding-y) var(--bs-dropdown-padding-x);
+        margin: 0;
+        font-size: var(--bs-dropdown-font-size);
+        color: var(--bs-dropdown-color);
+        text-align: left;
+        list-style: none;
+        background-color: var(--bs-dropdown-bg);
+        background-clip: padding-box;
+        border: var(--bs-dropdown-border-width) solid
+          var(--bs-dropdown-border-color);
+        border-radius: var(--bs-dropdown-border-radius);
+      }
+      .dropdown-divider {
+        height: 0;
+        margin: var(--bs-dropdown-divider-margin-y) 0;
+        overflow: hidden;
+        border-top: 1px solid var(--bs-dropdown-divider-bg);
+        opacity: 1;
+      }
+      .dropdown-item {
+        display: block;
+        width: 100%;
+        padding: var(--bs-dropdown-item-padding-y)
+          var(--bs-dropdown-item-padding-x);
+        clear: both;
+        font-weight: 400;
+        color: var(--bs-dropdown-link-color);
+        text-align: inherit;
+        text-decoration: none;
+        white-space: nowrap;
+        background-color: transparent;
+        border: 0;
+        border-radius: var(--bs-dropdown-item-border-radius, 0);
+      }
+      .nav-link {
+        display: block;
+        padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+        font-size: var(--bs-nav-link-font-size);
+        font-weight: var(--bs-nav-link-font-weight);
+        color: var(--bs-nav-link-color);
+        text-decoration: none;
+        background: 0 0;
+        border: 0;
+      }
+      .navbar {
+        --bs-navbar-padding-x: 0;
+        --bs-navbar-padding-y: 0.5rem;
+        --bs-navbar-color: rgba(var(--bs-emphasis-color-rgb), 0.65);
+        --bs-navbar-hover-color: rgba(var(--bs-emphasis-color-rgb), 0.8);
+        --bs-navbar-disabled-color: rgba(var(--bs-emphasis-color-rgb), 0.3);
+        --bs-navbar-active-color: rgba(var(--bs-emphasis-color-rgb), 1);
+        --bs-navbar-brand-padding-y: 0.3125rem;
+        --bs-navbar-brand-margin-end: 1rem;
+        --bs-navbar-brand-font-size: 1.25rem;
+        --bs-navbar-brand-color: rgba(var(--bs-emphasis-color-rgb), 1);
+        --bs-navbar-brand-hover-color: rgba(var(--bs-emphasis-color-rgb), 1);
+        --bs-navbar-nav-link-padding-x: 0.5rem;
+        --bs-navbar-toggler-padding-y: 0.25rem;
+        --bs-navbar-toggler-padding-x: 0.75rem;
+        --bs-navbar-toggler-font-size: 1.25rem;
+        --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        --bs-navbar-toggler-border-color: rgba(
+          var(--bs-emphasis-color-rgb),
+          0.15
+        );
+        --bs-navbar-toggler-border-radius: var(--bs-border-radius);
+        --bs-navbar-toggler-focus-width: 0.25rem;
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
+      }
+      .navbar > .container-fluid {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: inherit;
+        flex-wrap: inherit;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+      }
+      .navbar-brand {
+        padding-top: var(--bs-navbar-brand-padding-y);
+        padding-bottom: var(--bs-navbar-brand-padding-y);
+        margin-right: var(--bs-navbar-brand-margin-end);
+        font-size: var(--bs-navbar-brand-font-size);
+        color: var(--bs-navbar-brand-color);
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      .navbar-nav {
+        --bs-nav-link-padding-x: 0;
+        --bs-nav-link-padding-y: 0.5rem;
+        --bs-nav-link-font-weight: ;
+        --bs-nav-link-color: var(--bs-navbar-color);
+        --bs-nav-link-hover-color: var(--bs-navbar-hover-color);
+        --bs-nav-link-disabled-color: var(--bs-navbar-disabled-color);
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+      }
+      .navbar-nav .nav-link.active {
+        color: var(--bs-navbar-active-color);
+      }
+      .navbar-nav .dropdown-menu {
+        position: static;
+      }
+      .navbar-toggler {
+        padding: var(--bs-navbar-toggler-padding-y)
+          var(--bs-navbar-toggler-padding-x);
+        font-size: var(--bs-navbar-toggler-font-size);
+        line-height: 1;
+        color: var(--bs-navbar-color);
+        background-color: transparent;
+        border: var(--bs-border-width) solid
+          var(--bs-navbar-toggler-border-color);
+        border-radius: var(--bs-navbar-toggler-border-radius);
+      }
+      .navbar-toggler-icon {
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+        vertical-align: middle;
+        background-image: var(--bs-navbar-toggler-icon-bg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+      }
+      .navbar-dark {
+        --bs-navbar-color: rgba(255, 255, 255, 0.55);
+        --bs-navbar-hover-color: rgba(255, 255, 255, 0.75);
+        --bs-navbar-disabled-color: rgba(255, 255, 255, 0.25);
+        --bs-navbar-active-color: #fff;
+        --bs-navbar-brand-color: #fff;
+        --bs-navbar-brand-hover-color: #fff;
+        --bs-navbar-toggler-border-color: rgba(255, 255, 255, 0.1);
+        --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      }
+      .accordion-item:last-of-type > .accordion-collapse {
+        border-bottom-right-radius: var(--bs-accordion-border-radius);
+        border-bottom-left-radius: var(--bs-accordion-border-radius);
+      }
+      .accordion-body {
+        padding: var(--bs-accordion-body-padding-y)
+          var(--bs-accordion-body-padding-x);
+      }
+      .btn-close {
+        --bs-btn-close-color: #000;
+        --bs-btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e");
+        --bs-btn-close-opacity: 0.5;
+        --bs-btn-close-hover-opacity: 0.75;
+        --bs-btn-close-focus-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+        --bs-btn-close-focus-opacity: 1;
+        --bs-btn-close-disabled-opacity: 0.25;
+        --bs-btn-close-white-filter: invert(1) grayscale(100%) brightness(200%);
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box;
+        width: 1em;
+        height: 1em;
+        padding: 0.25em;
+        color: var(--bs-btn-close-color);
+        background: transparent var(--bs-btn-close-bg) center/1em auto no-repeat;
+        border: 0;
+        border-radius: 0.375rem;
+        opacity: var(--bs-btn-close-opacity);
+      }
+      .btn-close-white {
+        -webkit-filter: var(--bs-btn-close-white-filter);
+        filter: var(--bs-btn-close-white-filter);
+      }
+      .offcanvas {
+        --bs-offcanvas-zindex: 1045;
+        --bs-offcanvas-width: 400px;
+        --bs-offcanvas-height: 30vh;
+        --bs-offcanvas-padding-x: 1rem;
+        --bs-offcanvas-padding-y: 1rem;
+        --bs-offcanvas-color: var(--bs-body-color);
+        --bs-offcanvas-bg: var(--bs-body-bg);
+        --bs-offcanvas-border-width: var(--bs-border-width);
+        --bs-offcanvas-border-color: var(--bs-border-color-translucent);
+        --bs-offcanvas-box-shadow: var(--bs-box-shadow-sm);
+        --bs-offcanvas-title-line-height: 1.5;
+      }
+      .offcanvas {
+        position: fixed;
+        bottom: 0;
+        z-index: var(--bs-offcanvas-zindex);
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        max-width: 100%;
+        color: var(--bs-offcanvas-color);
+        visibility: hidden;
+        background-color: var(--bs-offcanvas-bg);
+        background-clip: padding-box;
+        outline: 0;
+      }
+      .offcanvas.offcanvas-end {
+        top: 0;
+        right: 0;
+        width: var(--bs-offcanvas-width);
+        border-left: var(--bs-offcanvas-border-width) solid
+          var(--bs-offcanvas-border-color);
+        -webkit-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        transform: translateX(100%);
+      }
+      .offcanvas-header {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        padding: var(--bs-offcanvas-padding-y) var(--bs-offcanvas-padding-x);
+      }
+      .offcanvas-header .btn-close {
+        padding: calc(var(--bs-offcanvas-padding-y) * 0.5)
+          calc(var(--bs-offcanvas-padding-x) * 0.5);
+        margin: calc(-0.5 * var(--bs-offcanvas-padding-y))
+          calc(-0.5 * var(--bs-offcanvas-padding-x))
+          calc(-0.5 * var(--bs-offcanvas-padding-y)) auto;
+      }
+      .offcanvas-title {
+        margin-bottom: 0;
+        line-height: var(--bs-offcanvas-title-line-height);
+      }
+      .offcanvas-body {
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        padding: var(--bs-offcanvas-padding-y) var(--bs-offcanvas-padding-x);
+        overflow-y: auto;
+      }
+      .text-bg-dark {
+        color: #fff !important;
+        background-color: RGBA(
+          var(--bs-dark-rgb),
+          var(--bs-bg-opacity, 1)
+        ) !important;
+      }
+      .fixed-top {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+      }
+      .d-grid {
+        display: -ms-grid !important;
+        display: grid !important;
+      }
+      .d-flex {
+        display: -webkit-box !important;
+        display: -ms-flexbox !important;
+        display: flex !important;
+      }
+      .min-vh-100 {
+        min-height: 100vh !important;
+      }
+      .flex-grow-1 {
+        -webkit-box-flex: 1 !important;
+        -ms-flex-positive: 1 !important;
+        flex-grow: 1 !important;
+      }
+      .justify-content-end {
+        -webkit-box-pack: end !important;
+        -ms-flex-pack: end !important;
+        justify-content: flex-end !important;
+      }
+      .justify-content-center {
+        -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+        justify-content: center !important;
+      }
+      .align-items-center {
+        -webkit-box-align: center !important;
+        -ms-flex-align: center !important;
+        align-items: center !important;
+      }
+      .mx-auto {
+        margin-right: auto !important;
+        margin-left: auto !important;
+      }
+      .mb-3 {
+        margin-bottom: 1rem !important;
+      }
+      .mb-4 {
+        margin-bottom: 1.5rem !important;
+      }
+      .mb-5 {
+        margin-bottom: 3rem !important;
+      }
+      .py-5 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+      }
+      .pe-3 {
+        padding-right: 1rem !important;
+      }
+      .gap-3 {
+        gap: 1rem !important;
+      }
+      .fs-5 {
+        font-size: 1.25rem !important;
+      }
+      .fw-bold {
+        font-weight: 700 !important;
+      }
+      .text-center {
+        text-align: center !important;
+      }
+      .text-uppercase {
+        text-transform: uppercase !important;
+      }
+      .text-white {
+        --bs-text-opacity: 1;
+        color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
+      }
+      .bg-light {
+        --bs-bg-opacity: 1;
+        background-color: rgba(
+          var(--bs-light-rgb),
+          var(--bs-bg-opacity)
+        ) !important;
+      }
+      .bg-dark {
+        --bs-bg-opacity: 1;
+        background-color: rgba(
+          var(--bs-dark-rgb),
+          var(--bs-bg-opacity)
+        ) !important;
+      }
+      @media (min-width: 576px) {
+        .d-sm-flex {
+          display: -webkit-box !important;
+          display: -ms-flexbox !important;
+          display: flex !important;
+        }
+        .justify-content-sm-center {
+          -webkit-box-pack: center !important;
+          -ms-flex-pack: center !important;
+          justify-content: center !important;
+        }
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="css/vendor.815c03d4.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <link
+      rel="stylesheet"
+      href="css/main.db1b5e97.css"
+      media="print"
+      onload="this.media='all'"
+    />
 
-  <!-- JavaScript -->
-  <script defer src="js/main.js"></script>
+    <!-- JavaScript -->
+    <script defer="" src="js/main.js"></script>
 
-  <!-- CSP (Content Security Policy) для безопасности -->
-  <!-- <meta
+    <!-- CSP (Content Security Policy) для безопасности -->
+    <!-- <meta
     http-equiv="Content-Security-Policy"
     content="default-src 'self'; img-src 'self' https://example.com; script-src 'self' 'unsafe-inline' https://apis.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;"
   /> -->
-</head>
+  </head>
 
   <body>
     <header class="header">
-  <nav
-    class="navbar navbar-dark bg-dark fixed-top"
-    aria-label="Dark offcanvas navbar"
-  >
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img
-          width="50"
-          height="45"
-          loading="eager"
-          src="../img/svg/logo.svg"
-          alt="Логотип ibb.expert"
-        />
-        <span>IBB.EXPERT</span>
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="offcanvas"
-        data-bs-target="#offcanvasNavbarDark"
-        aria-controls="offcanvasNavbarDark"
-        aria-label="Toggle navigation"
+      <nav
+        class="navbar navbar-dark bg-dark fixed-top"
+        aria-label="Dark offcanvas navbar"
       >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div
-        class="offcanvas offcanvas-end text-bg-dark"
-        tabindex="-1"
-        id="offcanvasNavbarDark"
-        aria-labelledby="offcanvasNavbarDarkLabel"
-      >
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarDarkLabel">Меню</h5>
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img
+              width="50"
+              height="45"
+              loading="eager"
+              src="../img/svg/logo.svg"
+              alt="Логотип ibb.expert"
+            />
+            <span>IBB.EXPERT</span>
+          </a>
           <button
+            class="navbar-toggler"
             type="button"
-            class="btn-close btn-close-white"
-            data-bs-dismiss="offcanvas"
-            aria-label="Close"
-          ></button>
-        </div>
-        <div class="offcanvas-body">
-          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">О нас</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Наши преимущества</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Почему мы?</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Виды страхования</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Команда</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Как это работает</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Отзывы</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Часто задаваемые вопросы</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Связаться с нами</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Язык
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <hr class="dropdown-divider" />
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbarDark"
+            aria-controls="offcanvasNavbarDark"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="offcanvas offcanvas-end text-bg-dark"
+            tabindex="-1"
+            id="offcanvasNavbarDark"
+            aria-labelledby="offcanvasNavbarDarkLabel"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarDarkLabel">
+                Меню
+              </h5>
+              <button
+                type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >О нас</a
+                  >
                 </li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Наши преимущества</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Почему мы?</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Виды страхования</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Команда</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Как это работает</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Отзывы</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Часто задаваемые вопросы</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Связаться с нами</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Язык
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Another action</a>
+                    </li>
+                    <li>
+                      <hr class="dropdown-divider" />
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </li>
+                  </ul>
                 </li>
               </ul>
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </nav>
-</header>
+      </nav>
+    </header>
 
     <main class="main">
       <section
-  class="d-flex align-items-center justify-content-center min-vh-100 text-center bg-light"
-  role="banner"
-  aria-labelledby="hero-title"
-  style="
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url('../img/hero.webp') center/cover no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-  "
->
-  <div class="container-fluid py-5">
-    <h1
-      id="hero-title"
-      class="display-3 fw-bold text-white mb-4 hero-text-shadow"
-    >
-      Страховая логистика по маршруту <br />
-      Европа-Беларусь-Россия-Казахстан-Узбекистан-КНР.
-    </h1>
-    <div class="col-lg-10 mx-auto">
-      <p class="fs-5 text-white mb-3 hero-text-shadow">
-        Online ОСАГО (СО, СИНЯЯ, ЗЕЛЕНАЯ, БЕЛАЯ КАРТА) ВСЕХ СТРАН ТРАНЗИТА* в
-        одном месте и в одно время.
-      </p>
-      <p
-        class="text-uppercase text-white display-6 fw-bold mb-5 hero-text-shadow"
-        aria-live="polite"
+        class="d-flex align-items-center justify-content-center min-vh-100 text-center bg-light"
+        role="banner"
+        aria-labelledby="hero-title"
+        style="
+          background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            url('../img/hero.webp') center/cover no-repeat;
+          background-position: center;
+          background-size: cover;
+          background-attachment: fixed;
+        "
       >
-        ВМЕСТЕ по Новому Великому Шёлковому Пути!
-      </p>
-      <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-        <a
-          href="#"
-          class="btn button-custom btn-lg"
-          aria-label="Узнать подробнее"
-          >Узнать подробнее</a
-        >
-      </div>
-    </div>
-  </div>
-</section>
- <section
-  class="py-5 d-flex align-items-center justify-content-center min-vh-100 text-center bg-light section-shadow-border"
-  aria-labelledby="about-heading"
->
-  <div class="container-fluid">
-    <div class="row justify-content-center">
-      <div class="col-md-10">
-        <div class="text-center">
-          <h2 id="about-heading" class="display-2 fw-bold mb-5">О нас</h2>
-          <p class="lead-custom">
-            Международная сеть страховых брокеров
-            <strong>«IBB»</strong> специализируется на страховании международных
-            автоперевозчиков, <strong>грузоотправителей</strong> (экспортеров) и
-            <strong>грузополучателей</strong> (импортеров), помогая
-            оптимизировать их расходы по страхованию и обеспечивая полное
-            покрытие рисков при перевозках между <strong>Европой</strong> и
-            <strong>Азией</strong>, в соответствии с законодательством стран
-            транзита.
-          </p>
-          <p class="lead-custom">
-            В <strong>IBB</strong> входят <strong>эксперты</strong> и
-            профессиональные посредники (преимущественно юридические лица),
-            осуществляющие деятельность в сфере страховых услуг в
-            <strong>Российской Федерации</strong>,
-            <strong>Республике Казахстан</strong>,
-            <strong>Республике Беларусь</strong>, <strong>Узбекистане</strong>,
-            <strong>Грузии</strong> и др., которые имеют все необходимые
-            компетенции и лицензии стран регистрации.
-          </p>
-          <p class="lead-custom">
-            Нашими клиентами являются более
-            <strong>350 организаций</strong> всех форм собственности, в том
-            числе
-            <strong>56 крупных логистических и транспортных компаний</strong>, а
-            также индивидуальные предприниматели из <strong>12 стран</strong>.
-            <small
-              >Мы гордимся тем, что наша сеть имеет долгую историю и надежную
-              репутацию.</small
-            >
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-      <section
-  class="py-5 d-flex align-items-center justify-content-center min-vh-100 section-shadow-border"
-  aria-labelledby="advantages-heading"
->
-  <div class="container">
-    <div class="row justify-content-center text-center mb-3">
-      <div class="col-lg-10 col-xl-9">
-        <h2 id="advantages-heading" class="display-2 fw-bold mb-5">
-          Наши преимущества
-        </h2>
-        <p class="lead-custom mb-4">
-          <strong>Страхование без границ.</strong> Оформление договоров
-          страхования (<strong>полисов</strong>) всех стран маршрута следования
-          в одном месте — <em>от Европы до Азии</em> и обратно, включая ЕС,
-          ЕврАзЭС, Узбекистан, Грузию и другие страны.
-        </p>
-      </div>
-    </div>
-    <div class="row g-4 g-md-5 text-center">
-      <dl class="col-md-4">
-        <dt class="h3 mb-2 mb-lg-3 fw-bold">Оптимальные тарифы</dt>
-        <dd class="fs-5">
-          <strong>Подбираем выгодные условия страхования</strong>, позволяя
-          <strong>снизить затраты</strong> без потери <em>качества защиты</em>.
-          Сотрудничаем с большинством ведущих страховых компаний стран
-          присутствия.
-        </dd>
-      </dl>
-      <dl class="col-md-4">
-        <dt class="h3 mb-2 mb-lg-3 fw-bold">Контроль и прозрачность</dt>
-        <dd class="fs-5">
-          Все операции проводятся исключительно
-          <strong>в безналичной форме</strong>, обеспечивая
-          <strong>прозрачность денежных потоков</strong> и
-          <em>полную безопасность сделок</em>.
-        </dd>
-      </dl>
-      <dl class="col-md-4">
-        <dt class="h3 mb-2 mb-lg-3 fw-bold">Поддержка и сервис</dt>
-        <dd class="fs-5">
-          За каждым клиентом закрепляется
-          <strong>персональный менеджер</strong>. Консультируем по
-          <strong>нюансам страхования</strong> в каждой стране,
-          <em>условиям страховщиков</em>, помогаем с урегулированием страховых
-          случаев.
-        </dd>
-      </dl>
-    </div>
-  </div>
-</section>
- <section
-  class="py-5 d-flex align-items-center justify-content-center min-vh-100 bg-light section-shadow-border"
->
-  <div class="container">
-    <div class="row justify-content-center text-center mb-3">
-      <div class="col-lg-10 col-xl-9">
-        <h2 class="display-2 fw-bold mb-5">Почему мы?</h2>
-        <p class="lead-custom mb-4">
-          Мы предлагаем <strong>полный спектр услуг</strong> для
-          <strong>международных автоперевозчиков</strong>,
-          <em>оптимизируя расходы</em> на страхование и обеспечивая
-          <strong>полное покрытие</strong>
-          всех возможных рисков.
-        </p>
-      </div>
-    </div>
-    <div class="row g-4 g-md-5 text-center">
-      <dl class="col-md-6 col-xl-4">
-        <dt class="h3 mb-2 mb-lg-3 fw-bold">Полное покрытие рисков</dt>
-        <dd class="fs-5">
-          <strong>Полное покрытие рисков.</strong> Мы обеспечиваем страхование
-          от всех рисков <strong>необходимых персонально</strong> для каждого
-          клиента с учётом законодательства всех транзитных стран и нюансов
-          условий местных <em>страховщиков</em>.
-        </dd>
-      </dl>
-      <dl class="col-md-6 col-xl-4">
-        <dt class="h3 mb-2 mb-lg-3 fw-bold">Удобство и экономия времени</dt>
-        <dd class="fs-5">
-          <strong>Удобство и экономия времени.</strong> Оформление необходимого
-          пакета страховок в одном месте без дополнительных усилий
-          <strong>экономит Ваше время</strong> и средства.
-        </dd>
-      </dl>
-      <dl class="col-md-6 col-xl-4">
-        <dt class="h3 mb-2 mb-lg-3 fw-bold">Гибкость тарифов</dt>
-        <dd class="fs-5">
-          <strong>Оптимальность тарифов.</strong> Мы предлагаем
-          <strong>гибкие тарифы</strong>, учитывая
-          <em>индивидуальные потребности маршрута</em>. Вам не нужно платить за
-          лишнее, но и не останетесь без необходимой страховой защиты. Всю
-          страховую логистику мы берём на себя.
-        </dd>
-      </dl>
-    </div>
-  </div>
-</section>
-
-      <section
-  class="py-5 d-flex align-items-center justify-content-center min-vh-100 text-center bg-light section-shadow-border"
->
-  <div class="container">
-    <div class="row justify-content-center text-center mb-2 mb-lg-4">
-      <div class="col-10 text-center mx-auto">
-        <h4 class="display-2 fw-bold mb-5">Виды страхования</h4>
-        <p class="lead-custom mb-4">
-          Мы предлагаем <strong>широкий выбор страховых услуг</strong>, которые
-          помогут вам защитить ваше <strong>имущество</strong>,
-          <strong>здоровье</strong> и <strong>жизнь</strong>. Наши решения
-          покрывают все основные виды страхования — от
-          <strong>страхования автомобилей</strong> и жилья до
-          <strong>медицинского и страхования жизни</strong>. Мы поможем
-          подобрать <em>лучший вариант</em>, учитывая ваши
-          <strong>индивидуальные потребности</strong>.
-        </p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12 col-md-4 mb-3">
-        <div class="card text-center border-0 h-100 shadow-lg rounded-5">
-          <div
-            class="card-body py-5 d-flex flex-column justify-content-between"
+        <div class="container-fluid py-5">
+          <h1
+            id="hero-title"
+            class="display-3 fw-bold text-white mb-4 hero-text-shadow"
           >
-            <h3 class="fw-bold mb-3">Basic</h3>
-            <p class="lead">
-              <strong>ОСАГО</strong>, как <strong>резидентов</strong>, так и
-              <strong>нерезидентов</strong> стран транзита. В том числе
-              <em>пограничного</em> и <em>трансграничного страхования</em>, по
-              системам <strong>Зелёная, Синяя, Белая карта, ОС</strong>.
+            Страховая логистика по маршруту <br />
+            Европа-Беларусь-Россия-Казахстан-Узбекистан-КНР.
+          </h1>
+          <div class="col-lg-10 mx-auto">
+            <p class="fs-5 text-white mb-3 hero-text-shadow">
+              Online ОСАГО (СО, СИНЯЯ, ЗЕЛЕНАЯ, БЕЛАЯ КАРТА) ВСЕХ СТРАН
+              ТРАНЗИТА* в одном месте и в одно время.
             </p>
-
-            <a
-              href="#"
-              class="btn button-custom-dark btn-lg mt-4"
-              aria-label="Узнать подробнее"
-              >Узнать подробнее</a
+            <p
+              class="text-uppercase text-white display-6 fw-bold mb-5 hero-text-shadow"
+              aria-live="polite"
             >
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-4 mb-3">
-        <div class="card text-center border-0 h-100 shadow-lg rounded-5">
-          <div
-            class="card-body py-5 d-flex flex-column justify-content-between"
-          >
-            <h3 class="fw-bold mb-3">STANDART (В+)</h3>
-            <p class="lead">
-              <strong>Добровольное страхование</strong> наземных транспортных
-              средств (<strong>АВТОКАСКО</strong>), грузов, ответственности
-              экспедиторов и перевозчиков.
+              ВМЕСТЕ по Новому Великому Шёлковому Пути!
             </p>
-
-            <a
-              href="#"
-              class="btn button-custom-dark btn-lg mt-4"
-              aria-label="Узнать подробнее"
-              >Узнать подробнее</a
-            >
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-4 mb-3">
-        <div class="card text-center border-0 h-100 shadow-lg rounded-5">
-          <div
-            class="card-body py-5 d-flex flex-column justify-content-between"
-          >
-            <h3 class="fw-bold mb-3">PRO (В+, S+)</h3>
-            <p class="lead">
-              <strong>Добровольное страхование</strong> автогражданской
-              ответственности владельцев транспортных средств, имущества, от
-              несчастных случаев водителей и иных работников компании,
-              <strong>медицинское</strong> и прочее страхование.
-            </p>
-
-            <a
-              href="#"
-              class="btn button-custom-dark btn-lg mt-4"
-              aria-label="Узнать подробнее"
-              >Узнать подробнее</a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
- <section class="py-5">
-  <div class="container">
-    <div class="row justify-content-center text-center mb-2 mb-lg-4">
-      <div class="col-12 col-lg-8 col-xxl-7 text-center mx-auto">
-        <span class="text-muted">Our Team</span>
-        <h2 class="display-5 fw-bold">Meet the Team</h2>
-        <p class="lead">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta harum
-          ipsum venenatis metus sem veniam eveniet aperiam suscipit.
-        </p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="card border-0 mb-3">
-          <div class="row g-0 align-items-center bg-light">
-            <div class="col-sm-5">
-              <img
-                alt="..."
-                class="img-fluid"
-                src="https://freefrontend.dev/assets/rectangle-tall2.png"
-              />
+            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+              <a
+                href="#"
+                class="btn button-custom btn-lg"
+                aria-label="Узнать подробнее"
+                >Узнать подробнее</a
+              >
             </div>
-            <div class="col-sm-7">
-              <div class="card-body mx-md-3">
-                <h5 class="fw-bold">John Doe</h5>
-                <div class="text-muted mb-4">Programmer</div>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing vel
-                  eligendi.
+          </div>
+        </div>
+      </section>
+      <section
+        class="py-5 d-flex align-items-center justify-content-center min-vh-100 text-center bg-light section-shadow-border"
+        aria-labelledby="about-heading"
+      >
+        <div class="container-fluid">
+          <div class="row justify-content-center">
+            <div class="col-md-10">
+              <div class="text-center">
+                <h2 id="about-heading" class="display-2 fw-bold mb-5">О нас</h2>
+                <p class="lead-custom">
+                  Международная сеть страховых брокеров
+                  <strong>«IBB»</strong> специализируется на страховании
+                  международных автоперевозчиков,
+                  <strong>грузоотправителей</strong> (экспортеров) и
+                  <strong>грузополучателей</strong> (импортеров), помогая
+                  оптимизировать их расходы по страхованию и обеспечивая полное
+                  покрытие рисков при перевозках между
+                  <strong>Европой</strong> и <strong>Азией</strong>,
+                  в соответствии с законодательством стран транзита.
                 </p>
-                <div class="d-flex mt-4">
-                  <a class="btn btn-sm me-2" href=""
-                    ><svg
-                      class="bi bi-facebook"
-                      fill="currentColor"
-                      height="16"
-                      viewbox="0 0 16 16"
-                      width="16"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
-                      ></path></svg
-                  ></a>
-                  <a class="btn btn-sm me-2" href=""
-                    ><svg
-                      class="bi bi-twitter"
-                      fill="currentColor"
-                      height="16"
-                      viewbox="0 0 16 16"
-                      width="16"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
-                      ></path></svg
-                  ></a>
-                  <a class="btn btn-sm" href=""
-                    ><svg
-                      class="bi bi-linkedin"
-                      fill="currentColor"
-                      height="16"
-                      viewbox="0 0 16 16"
-                      width="16"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"
-                      ></path></svg
-                  ></a>
-                </div>
+                <p class="lead-custom">
+                  В <strong>IBB</strong> входят <strong>эксперты</strong> и
+                  профессиональные посредники (преимущественно юридические
+                  лица), осуществляющие деятельность в сфере страховых услуг в
+                  <strong>Российской Федерации</strong>,
+                  <strong>Республике Казахстан</strong>,
+                  <strong>Республике Беларусь</strong>,
+                  <strong>Узбекистане</strong>, <strong>Грузии</strong> и др.,
+                  которые имеют все необходимые компетенции и лицензии стран
+                  регистрации.
+                </p>
+                <p class="lead-custom">
+                  Нашими клиентами являются более
+                  <strong>350 организаций</strong> всех форм собственности,
+                  в том числе
+                  <strong
+                    >56 крупных логистических и транспортных компаний</strong
+                  >, а также индивидуальные предприниматели из <strong
+                    >12 стран</strong
+                  >.
+                  <small
+                    >Мы гордимся тем, что наша сеть имеет долгую историю
+                    и надежную репутацию.</small
+                  >
+                </p>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       <section
-  class="py-5 d-flex justify-content-center align-items-center min-vh-100 section-shadow-border"
-  aria-labelledby="steps-title"
->
-  <div class="container">
-    <div class="row justify-content-center text-center mb-4">
-      <div class="col-lg-10 col-xxl-9">
-        <h3 id="steps-title" class="display-2 fw-bold mb-5">
-          Как это работает
-        </h3>
-        <p class="lead-custom mb-4">
-          <strong>Международная сеть страховых брокеров «IBB»</strong>
-          предлагает вам <em>выгодные условия</em> для
-          <strong>страхования автоперевозок</strong>. Мы гарантируем
-          <strong>полное покрытие рисков</strong> и
-          <em>оптимизацию расходов</em> для
-          <strong>международных автоперевозчиков</strong>.
-        </p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6 mx-auto">
-        <dl>
-          <div class="row">
-            <dt class="col-auto text-center">
-              <div
-                class="d-flex rounded-circle align-items-center justify-content-center bg-primary text-white fs-3 fw-bold border border-white border-4 me-1"
-                style="width: 4rem; height: 4rem"
-              >
-                1
-              </div>
-              <div class="text-muted fw-light mt-1">Шаг 1</div>
-            </dt>
-            <dd class="col">
-              <div class="card rounded-0 bg-light py-4 px-5 mb-5">
-                <h3>Заявка на договор страхования</h3>
-                <p class="text-muted mb-0">
-                  Обращаетесь к нам по каналам электронной связи (телефон,
-                  электронная почта, мессенджеры).
-                </p>
-              </div>
-            </dd>
+        class="py-5 d-flex align-items-center justify-content-center min-vh-100 section-shadow-border"
+        aria-labelledby="advantages-heading"
+      >
+        <div class="container">
+          <div class="row justify-content-center text-center mb-3">
+            <div class="col-lg-10 col-xl-9">
+              <h2 id="advantages-heading" class="display-2 fw-bold mb-5">
+                Наши преимущества
+              </h2>
+              <p class="lead-custom mb-4">
+                <strong>Страхование без границ.</strong> Оформление договоров
+                страхования (<strong>полисов</strong>) всех стран маршрута
+                следования в одном месте — <em>от Европы до Азии</em> и обратно,
+                включая ЕС, ЕврАзЭС, Узбекистан, Грузию и другие страны.
+              </p>
+            </div>
           </div>
-
-          <div class="row">
-            <dt class="col-auto text-center">
-              <div
-                class="d-flex rounded-circle align-items-center justify-content-center bg-primary text-white fs-3 fw-bold border border-white border-4 me-1"
-                style="width: 4rem; height: 4rem"
-              >
-                2
-              </div>
-              <div class="text-muted fw-light mt-1">Шаг 2</div>
-            </dt>
-            <dd class="col">
-              <div class="card rounded-0 bg-light py-4 px-5 mb-5">
-                <h3>Подбор тарифов и условий</h3>
-                <p class="text-muted mb-0">
-                  Мы подбираем вам все необходимые страховки и согласовываем их.
-                </p>
-              </div>
-            </dd>
+          <div class="row g-4 g-md-5 text-center">
+            <dl class="col-md-4">
+              <dt class="h3 mb-2 mb-lg-3 fw-bold">Оптимальные тарифы</dt>
+              <dd class="fs-5">
+                <strong>Подбираем выгодные условия страхования</strong>,
+                позволяя <strong>снизить затраты</strong> без потери
+                <em>качества защиты</em>. Сотрудничаем с большинством ведущих
+                страховых компаний стран присутствия.
+              </dd>
+            </dl>
+            <dl class="col-md-4">
+              <dt class="h3 mb-2 mb-lg-3 fw-bold">Контроль и прозрачность</dt>
+              <dd class="fs-5">
+                Все операции проводятся исключительно
+                <strong>в безналичной форме</strong>, обеспечивая
+                <strong>прозрачность денежных потоков</strong> и
+                <em>полную безопасность сделок</em>.
+              </dd>
+            </dl>
+            <dl class="col-md-4">
+              <dt class="h3 mb-2 mb-lg-3 fw-bold">Поддержка и сервис</dt>
+              <dd class="fs-5">
+                За каждым клиентом закрепляется
+                <strong>персональный менеджер</strong>. Консультируем по
+                <strong>нюансам страхования</strong> в каждой стране,
+                <em>условиям страховщиков</em>, помогаем с урегулированием
+                страховых случаев.
+              </dd>
+            </dl>
           </div>
-          <div class="row">
-            <dt class="col-auto text-center">
-              <div
-                class="d-flex rounded-circle align-items-center justify-content-center bg-primary text-white fs-3 fw-bold border border-white border-4 me-1"
-                style="width: 4rem; height: 4rem"
-              >
-                3
-              </div>
-              <div class="text-muted fw-light mt-1">Шаг 3</div>
-            </dt>
-            <dd class="col">
-              <div class="card rounded-0 bg-light py-4 px-5 mb-5">
-                <h3>Согласование договора</h3>
-                <p class="text-muted mb-0">
-                  Связываемся с нашими партнерами, которые выставляют вам счета.
-                </p>
-              </div>
-            </dd>
+        </div>
+      </section>
+      <section
+        class="py-5 d-flex align-items-center justify-content-center min-vh-100 bg-light section-shadow-border"
+      >
+        <div class="container">
+          <div class="row justify-content-center text-center mb-3">
+            <div class="col-lg-10 col-xl-9">
+              <h2 class="display-2 fw-bold mb-5">Почему мы?</h2>
+              <p class="lead-custom mb-4">
+                Мы предлагаем <strong>полный спектр услуг</strong> для
+                <strong>международных автоперевозчиков</strong>,
+                <em>оптимизируя расходы</em> на страхование и обеспечивая
+                <strong>полное покрытие</strong>
+                всех возможных рисков.
+              </p>
+            </div>
           </div>
-
-          <div class="row">
-            <dt class="col-auto text-center">
-              <div
-                class="d-flex rounded-circle align-items-center justify-content-center bg-primary text-white fs-3 fw-bold border border-white border-4 me-1"
-                style="width: 4rem; height: 4rem"
-              >
-                4
-              </div>
-              <div class="text-muted fw-light mt-1">Шаг 4</div>
-            </dt>
-            <dd class="col">
-              <div class="card rounded-0 bg-light py-4 px-5 mb-5">
-                <h3>Заключение и оформление договора</h3>
-                <p class="text-muted mb-0">
-                  После оплаты партнеры оформляют договоры страхования и все
-                  необходимые документы и направляют их вам.
-                </p>
-              </div>
-            </dd>
+          <div class="row g-4 g-md-5 text-center">
+            <dl class="col-md-6 col-xl-4">
+              <dt class="h3 mb-2 mb-lg-3 fw-bold">Полное покрытие рисков</dt>
+              <dd class="fs-5">
+                <strong>Полное покрытие рисков.</strong> Мы обеспечиваем
+                страхование от всех рисков
+                <strong>необходимых персонально</strong> для каждого клиента
+                с учётом законодательства всех транзитных стран и нюансов
+                условий местных <em>страховщиков</em>.
+              </dd>
+            </dl>
+            <dl class="col-md-6 col-xl-4">
+              <dt class="h3 mb-2 mb-lg-3 fw-bold">
+                Удобство и экономия времени
+              </dt>
+              <dd class="fs-5">
+                <strong>Удобство и экономия времени.</strong> Оформление
+                необходимого пакета страховок в одном месте без дополнительных
+                усилий <strong>экономит Ваше время</strong> и средства.
+              </dd>
+            </dl>
+            <dl class="col-md-6 col-xl-4">
+              <dt class="h3 mb-2 mb-lg-3 fw-bold">Гибкость тарифов</dt>
+              <dd class="fs-5">
+                <strong>Оптимальность тарифов.</strong> Мы предлагаем
+                <strong>гибкие тарифы</strong>, учитывая
+                <em>индивидуальные потребности маршрута</em>. Вам не нужно
+                платить за лишнее, но и не останетесь без необходимой страховой
+                защиты. Всю страховую логистику мы берём на себя.
+              </dd>
+            </dl>
           </div>
-        </dl>
-      </div>
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
       <section
-  class="py-5 d-flex align-items-center justify-content-center min-vh-100 text-center bg-light section-shadow-border"
->
-  <div class="container">
-    <div class="row justify-content-center text-center mb-2 mb-lg-4">
-      <div class="col-10 text-center mx-auto">
-        <h2 class="display-2 fw-bold mb-5">Отзывы</h2>
-        <p class="lead-custom mb-4">
-          Наши клиенты доверяют нам
-          <strong>страхование своих перевозок</strong> по маршруту
-          <strong>Европа — Азия</strong>. Мы гордимся тем, что помогаем
-          <strong>транспортным компаниям</strong>,
-          <strong>экспедиторам</strong> и <strong>грузоотправителям</strong>
-          <em>снижать риски</em>, <em>оптимизировать затраты</em> и получать
-          <strong>надёжную защиту</strong> на всём пути следования. Вот что они
-          говорят о нас.
-        </p>
-      </div>
-    </div>
-    <div class="row g-xl-5 py-4">
-      <div class="col-md-12">
-        <div class="mx-0 mx-xl-3 py-3 py-md-0 text-center">
-          <div class="text-primary mb-md-4 mb-2">
-            <svg
-              class="bi bi-quote"
-              fill="currentColor"
-              height="48"
-              viewbox="0 0 16 16"
-              width="48"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z"
-              ></path>
-            </svg>
-          </div>
-          <h4 class="h2 mb-3">
-            Оптимизация страховых затрат для крупного логистического оператора
-          </h4>
-          <p class="mb-4">
-            Наша компания занимается
-            <strong>международными грузоперевозками</strong> и ранее
-            сталкивалась с <em>высокой стоимостью страхования</em> в разных
-            странах, сложностью оформления полисов и
-            <em>рисками при пересечении границ</em>. Нам нужно было
-            <strong>снизить расходы</strong>, упростить процесс оформления и
-            обеспечить <strong>полное покрытие рисков</strong> по всему
-            маршруту. Обратившись в <strong>IBB</strong>, мы смогли оформить все
-            необходимые страховки (<em
-              >ОСАГО, Зелёная карта, грузовое страхование</em
-            >) <strong>в одном месте</strong>. Нам предоставили
-            <strong>персонального менеджера</strong>, который сопровождал нас на
-            всех этапах. В результате мы
-            <strong>снизили страховые затраты на 25%</strong>,
-            <em>сократили время оформления документов на 70%</em> и теперь
-            уверены в <strong>полной страховой защите</strong> на всём маршруте.
-
-            <small
-              >*Все страховки оформлены в соответствии с законодательством стран
-              транзита.</small
-            >
-          </p>
-
-          <h5 class="mb-1 fw-bold">John Doe</h5>
-          <div class="text-muted">Graphic Designer</div>
-        </div>
-      </div>
-      <div class="col-md-12">
-        <div class="mx-0 mx-xl-3 py-3 py-md-0 text-center">
-          <div class="text-primary mb-md-4 mb-2">
-            <svg
-              class="bi bi-quote"
-              fill="currentColor"
-              height="48"
-              viewbox="0 0 16 16"
-              width="48"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z"
-              ></path>
-            </svg>
-          </div>
-          <h4 class="h2 mb-3">
-            Упрощение оформления страховок для индивидуального перевозчика
-          </h4>
-          <p class="mb-4">
-            Я — <strong>индивидуальный перевозчик</strong>, работаю на маршруте
-            <strong>Казахстан — Россия — Китай</strong>. Раньше страхование
-            приходилось оформлять в <em>разных компаниях</em>, что занимало
-            <em>много времени</em> и не всегда было выгодно. Мне нужно было
-            <strong>решение</strong>, которое позволило бы оформлять страховки
-            <strong>в одном месте</strong>, <em>без лишних затрат и рисков</em>.
-            В <strong>IBB</strong> мне предложили сразу
-            <strong>весь пакет необходимых страховок</strong>, с
-            <em>гибкими тарифами</em> и <em>прозрачными условиями</em>. Все
-            документы были оформлены <strong>быстро и удалённо</strong>. В итоге
-            я <strong>сэкономил 40% времени</strong> на оформлении страховок,
-            получил <em>выгодные условия</em> и теперь
-            <strong>не переживаю за покрытие рисков</strong> при каждом рейсе.
-            <small
-              >*Все страховки соответствуют требованиям стран транзита.</small
-            >
-          </p>
-
-          <h5 class="mb-1 fw-bold">John Doe</h5>
-          <div class="text-muted">HR Manager</div>
-        </div>
-      </div>
-      <div class="col-md-12">
-        <div class="mx-0 mx-xl-3 py-3 py-md-0 text-center">
-          <div class="text-primary mb-md-4 mb-2">
-            <svg
-              class="bi bi-quote"
-              fill="currentColor"
-              height="48"
-              viewbox="0 0 16 16"
-              width="48"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z"
-              ></path>
-            </svg>
-          </div>
-          <h4 class="h2 mb-3">
-            Защита груза и снижение рисков при перевозках между Европой и Азией
-          </h4>
-          <p class="mb-4">
-            Наша компания занимается <strong>международной торговлей</strong> и
-            регулярно отправляет грузы по маршруту
-            <strong>Европа — Центральная Азия</strong>. Основные проблемы
-            заключались в <em>страховании грузов</em> с учётом
-            <em>разных требований в странах транзита</em> и
-            <em>долгом процессе оформления</em>. Обратившись в
-            <strong>IBB</strong>, мы получили
-            <strong>комплексное страхование</strong>:
-            <em>ОСАГО, страхование грузов и ответственности перевозчика</em>.
-            Все договоры были оформлены
-            <strong>дистанционно, в одном месте</strong>. Благодаря этому мы
-            <strong>обеспечили 100% страховое покрытие</strong>,
-            <em>минимизировали финансовые риски</em> и
-            <strong>сократили время оформления</strong> страховки
-            <em>с нескольких недель до двух дней</em>.
-
-            <small
-              >*Страхование соответствует требованиям законодательства стран
-              транзита.</small
-            >
-          </p>
-
-          <h5 class="mb-1 fw-bold">John Doe</h5>
-          <div class="text-muted">Founder & CEO</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
- <section
-  class="py-5 d-flex align-items-center justify-content-center min-vh-100 section-shadow-border"
->
-  <div class="container">
-    <div class="row justify-content-center text-center mb-3">
-      <div class="col-10">
-        <h2 class="display-2 fw-bold">Часто задаваемые вопросы</h2>
-        <p class="lead-custom">
-          Мы собрали самые часто задаваемые вопросы, чтобы помочь вам быстрее
-          найти ответы. Если у вас есть другие вопросы, мы всегда рады помочь!
-        </p>
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-md-12">
-        <div class="accordion" id="Questions-accordion">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="Questions-headingOne">
-              <button
-                aria-controls="Questions-collapseOne"
-                aria-expanded="false"
-                class="accordion-button collapsed bg-light"
-                data-bs-target="#Questions-collapseOne"
-                data-bs-toggle="collapse"
-                type="button"
-              >
-                <div class="text-muted me-3">
-                  <svg
-                    class="bi bi-question-circle-fill"
-                    fill="currentColor"
-                    height="24"
-                    viewbox="0 0 16 16"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"
-                    ></path>
-                  </svg>
-                </div>
-                Что такое International Brokers' Board (IBB)?
-              </button>
-            </h2>
-            <div
-              aria-labelledby="Questions-headingOne"
-              class="accordion-collapse collapse"
-              data-bs-parent="#Questions-accordion"
-              id="Questions-collapseOne"
-            >
-              <div class="accordion-body">
-                IBB — это международная ассоциация страховых посредников,
-                объединяющая брокеров и агентов со всего мира. Мы предоставляем
-                платформу для сотрудничества, обмена опытом и продвижения
-                передовых страховых решений.
-              </div>
+        class="py-5 d-flex align-items-center justify-content-center min-vh-100 text-center bg-light section-shadow-border"
+      >
+        <div class="container">
+          <div class="row justify-content-center text-center mb-2 mb-lg-4">
+            <div class="col-10 text-center mx-auto">
+              <h4 class="display-2 fw-bold mb-5">Виды страхования</h4>
+              <p class="lead-custom mb-4">
+                Мы предлагаем <strong>широкий выбор страховых услуг</strong>,
+                которые помогут вам защитить ваше <strong>имущество</strong>,
+                <strong>здоровье</strong> и <strong>жизнь</strong>. Наши решения
+                покрывают все основные виды страхования — от
+                <strong>страхования автомобилей</strong> и жилья до
+                <strong>медицинского и страхования жизни</strong>. Мы поможем
+                подобрать <em>лучший вариант</em>, учитывая ваши
+                <strong>индивидуальные потребности</strong>.
+              </p>
             </div>
           </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="Questions-headingTwo">
-              <button
-                aria-controls="Questions-collapseTwo"
-                aria-expanded="false"
-                class="accordion-button collapsed bg-light"
-                data-bs-target="#Questions-collapseTwo"
-                data-bs-toggle="collapse"
-                type="button"
-              >
-                <div class="text-muted me-3">
-                  <svg
-                    class="bi bi-question-circle-fill"
-                    fill="currentColor"
-                    height="24"
-                    viewbox="0 0 16 16"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
+          <div class="row">
+            <div class="col-12 col-md-4 mb-3">
+              <div class="card text-center border-0 h-100 shadow-lg rounded-5">
+                <div
+                  class="card-body py-5 d-flex flex-column justify-content-between"
+                >
+                  <h3 class="fw-bold mb-3">Basic</h3>
+                  <p class="lead">
+                    <strong>ОСАГО</strong>, как <strong>резидентов</strong>, так
+                    и <strong>нерезидентов</strong> стран транзита. В том числе
+                    <em>пограничного</em> и <em>трансграничного страхования</em
+                    >, по системам
+                    <strong>Зелёная, Синяя, Белая карта, ОС</strong>.
+                  </p>
+
+                  <a
+                    href="#"
+                    class="btn button-custom-dark btn-lg mt-4"
+                    aria-label="Узнать подробнее"
+                    >Узнать подробнее</a
                   >
-                    <path
-                      d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"
-                    ></path>
-                  </svg>
                 </div>
-                Какую помощь вы оказываете в страховании?
-              </button>
-            </h2>
-            <div
-              aria-labelledby="Questions-headingTwo"
-              class="accordion-collapse collapse"
-              data-bs-parent="#Questions-accordion"
-              id="Questions-collapseTwo"
-            >
-              <div class="accordion-body">
-                — Помогаем подобрать подходящие страховые продукты. — Упрощаем
-                оформление полисов для международных маршрутов. — Консультируем
-                по вопросам законодательных требований в странах транзита. —
-                Сопровождаем клиентов 24/7 в случае страховых случаев.
               </div>
             </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="Questions-headingThree">
-              <button
-                aria-controls="Questions-collapseThree"
-                aria-expanded="false"
-                class="accordion-button collapsed bg-light"
-                data-bs-target="#Questions-collapseThree"
-                data-bs-toggle="collapse"
-                type="button"
-              >
-                <div class="text-muted me-3">
-                  <svg
-                    class="bi bi-question-circle-fill"
-                    fill="currentColor"
-                    height="24"
-                    viewbox="0 0 16 16"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
+            <div class="col-12 col-md-4 mb-3">
+              <div class="card text-center border-0 h-100 shadow-lg rounded-5">
+                <div
+                  class="card-body py-5 d-flex flex-column justify-content-between"
+                >
+                  <h3 class="fw-bold mb-3">STANDART (В+)</h3>
+                  <p class="lead">
+                    <strong>Добровольное страхование</strong> наземных
+                    транспортных средств (<strong>АВТОКАСКО</strong>), грузов,
+                    ответственности экспедиторов и перевозчиков.
+                  </p>
+
+                  <a
+                    href="#"
+                    class="btn button-custom-dark btn-lg mt-4"
+                    aria-label="Узнать подробнее"
+                    >Узнать подробнее</a
                   >
-                    <path
-                      d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"
-                    ></path>
-                  </svg>
                 </div>
-                Какие услуги предоставляют члены IBB?
-              </button>
-            </h2>
-            <div
-              aria-labelledby="Questions-headingThree"
-              class="accordion-collapse collapse"
-              data-bs-parent="#Questions-accordion"
-              id="Questions-collapseThree"
-            >
-              <div class="accordion-body">
-                Наши партнеры предлагают комплекс страховых решений, включая: —
-                Обязательное страхование гражданской ответственности (ОСАГО). —
-                Страхование грузов и автопарка (КАСКО). -Добровольное
-                страхование ответственности. — Медицинское страхование для
-                сотрудников. — Консультации по управлению рисками.
               </div>
             </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="Questions-headingFour">
-              <button
-                aria-controls="Questions-collapseFour"
-                aria-expanded="false"
-                class="accordion-button collapsed bg-light"
-                data-bs-target="#Questions-collapseFour"
-                data-bs-toggle="collapse"
-                type="button"
-              >
-                <div class="text-muted me-3">
-                  <svg
-                    class="bi bi-question-circle-fill"
-                    fill="currentColor"
-                    height="24"
-                    viewbox="0 0 16 16"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
+            <div class="col-12 col-md-4 mb-3">
+              <div class="card text-center border-0 h-100 shadow-lg rounded-5">
+                <div
+                  class="card-body py-5 d-flex flex-column justify-content-between"
+                >
+                  <h3 class="fw-bold mb-3">PRO (В+, S+)</h3>
+                  <p class="lead">
+                    <strong>Добровольное страхование</strong> автогражданской
+                    ответственности владельцев транспортных средств, имущества,
+                    от несчастных случаев водителей и иных работников компании,
+                    <strong>медицинское</strong> и прочее страхование.
+                  </p>
+
+                  <a
+                    href="#"
+                    class="btn button-custom-dark btn-lg mt-4"
+                    aria-label="Узнать подробнее"
+                    >Узнать подробнее</a
                   >
-                    <path
-                      d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"
-                    ></path>
-                  </svg>
                 </div>
-                В каких странах работают члены IBB?
-              </button>
-            </h2>
-            <div
-              aria-labelledby="Questions-headingFour"
-              class="accordion-collapse collapse"
-              data-bs-parent="#Questions-accordion"
-              id="Questions-collapseFour"
-            >
-              <div class="accordion-body">
-                Мы предоставляем услуги в Европе, Азии, СНГ и других регионах.
-                Наши основные партнёры находятся в странах с высоким спросом на
-                международное страхование: Польша, Казахстан, Латвия,
-                Узбекистан, Россия, Литва, Беларусь, Узбекистан, Грузия и
-                другие.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="Questions-headingFour">
-              <button
-                aria-controls="Questions-collapseFour"
-                aria-expanded="false"
-                class="accordion-button collapsed bg-light"
-                data-bs-target="#Questions-collapseFour"
-                data-bs-toggle="collapse"
-                type="button"
-              >
-                <div class="text-muted me-3">
-                  <svg
-                    class="bi bi-question-circle-fill"
-                    fill="currentColor"
-                    height="24"
-                    viewbox="0 0 16 16"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"
-                    ></path>
-                  </svg>
-                </div>
-                Какие преимущества даёт участие в IBB?
-              </button>
-            </h2>
-            <div
-              aria-labelledby="Questions-headingFour"
-              class="accordion-collapse collapse"
-              data-bs-parent="#Questions-accordion"
-              id="Questions-collapseFour"
-            >
-              <div class="accordion-body">
-                — Доступ к международной сети страховых партнёров. —
-                Персонализированная поддержка и консультации. — Участие в
-                обучающих программах и мероприятиях. — Прямой доступ к лучшим
-                страховым продуктам и решениям. — Сотрудничество с IBB повышает
-                доверие клиентов и партнёров!
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="Questions-headingFour">
-              <button
-                aria-controls="Questions-collapseFour"
-                aria-expanded="false"
-                class="accordion-button collapsed bg-light"
-                data-bs-target="#Questions-collapseFour"
-                data-bs-toggle="collapse"
-                type="button"
-              >
-                <div class="text-muted me-3">
-                  <svg
-                    class="bi bi-question-circle-fill"
-                    fill="currentColor"
-                    height="24"
-                    viewbox="0 0 16 16"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"
-                    ></path>
-                  </svg>
-                </div>
-                Как стать участником ассоциации?
-              </button>
-            </h2>
-            <div
-              aria-labelledby="Questions-headingFour"
-              class="accordion-collapse collapse"
-              data-bs-parent="#Questions-accordion"
-              id="Questions-collapseFour"
-            >
-              <div class="accordion-body">
-                Для вступления в IBB необходимо подать заявку через наш сайт. Мы
-                рассматриваем заявки от страховых брокеров, агентов и компаний,
-                соответствующих нашим профессиональным стандартам. Свяжитесь с
-                нами: membership@ibb.expert
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
+      <section class="py-5">
+        <div class="container">
+          <div class="row justify-content-center text-center mb-2 mb-lg-4">
+            <div class="col-12 col-lg-8 col-xxl-7 text-center mx-auto">
+              <span class="text-muted">Our Team</span>
+              <h2 class="display-5 fw-bold">Meet the Team</h2>
+              <p class="lead">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta
+                harum ipsum venenatis metus sem veniam eveniet aperiam suscipit.
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="card border-0 mb-3">
+                <div class="row g-0 align-items-center bg-light">
+                  <div class="col-sm-5">
+                    <img
+                      alt="..."
+                      class="img-fluid"
+                      src="https://freefrontend.dev/assets/rectangle-tall2.png"
+                    />
+                  </div>
+                  <div class="col-sm-7">
+                    <div class="card-body mx-md-3">
+                      <h5 class="fw-bold">John Doe</h5>
+                      <div class="text-muted mb-4">Programmer</div>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing vel
+                        eligendi.
+                      </p>
+                      <div class="d-flex mt-4">
+                        <a class="btn btn-sm me-2" href=""
+                          ><svg
+                            class="bi bi-facebook"
+                            fill="currentColor"
+                            height="16"
+                            viewbox="0 0 16 16"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+                            ></path></svg
+                        ></a>
+                        <a class="btn btn-sm me-2" href=""
+                          ><svg
+                            class="bi bi-twitter"
+                            fill="currentColor"
+                            height="16"
+                            viewbox="0 0 16 16"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+                            ></path></svg
+                        ></a>
+                        <a class="btn btn-sm" href=""
+                          ><svg
+                            class="bi bi-linkedin"
+                            fill="currentColor"
+                            height="16"
+                            viewbox="0 0 16 16"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"
+                            ></path></svg
+                        ></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="py-5 d-flex justify-content-center align-items-center min-vh-100 section-shadow-border"
+        aria-labelledby="steps-title"
+      >
+        <div class="container">
+          <div class="row justify-content-center text-center mb-4">
+            <div class="col-lg-10 col-xxl-9">
+              <h3 id="steps-title" class="display-2 fw-bold mb-5">
+                Как это работает
+              </h3>
+              <p class="lead-custom mb-4">
+                <strong>Международная сеть страховых брокеров «IBB»</strong>
+                предлагает вам <em>выгодные условия</em> для
+                <strong>страхования автоперевозок</strong>. Мы гарантируем
+                <strong>полное покрытие рисков</strong> и
+                <em>оптимизацию расходов</em> для
+                <strong>международных автоперевозчиков</strong>.
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mx-auto">
+              <dl>
+                <div class="row">
+                  <dt class="col-auto text-center">
+                    <div
+                      class="d-flex rounded-circle align-items-center justify-content-center bg-primary text-white fs-3 fw-bold border border-white border-4 me-1"
+                      style="width: 4rem; height: 4rem"
+                    >
+                      1
+                    </div>
+                    <div class="text-muted fw-light mt-1">Шаг 1</div>
+                  </dt>
+                  <dd class="col">
+                    <div class="card rounded-0 bg-light py-4 px-5 mb-5">
+                      <h3>Заявка на договор страхования</h3>
+                      <p class="text-muted mb-0">
+                        Обращаетесь к нам по каналам электронной связи (телефон,
+                        электронная почта, мессенджеры).
+                      </p>
+                    </div>
+                  </dd>
+                </div>
+
+                <div class="row">
+                  <dt class="col-auto text-center">
+                    <div
+                      class="d-flex rounded-circle align-items-center justify-content-center bg-primary text-white fs-3 fw-bold border border-white border-4 me-1"
+                      style="width: 4rem; height: 4rem"
+                    >
+                      2
+                    </div>
+                    <div class="text-muted fw-light mt-1">Шаг 2</div>
+                  </dt>
+                  <dd class="col">
+                    <div class="card rounded-0 bg-light py-4 px-5 mb-5">
+                      <h3>Подбор тарифов и условий</h3>
+                      <p class="text-muted mb-0">
+                        Мы подбираем вам все необходимые страховки
+                        и согласовываем их.
+                      </p>
+                    </div>
+                  </dd>
+                </div>
+                <div class="row">
+                  <dt class="col-auto text-center">
+                    <div
+                      class="d-flex rounded-circle align-items-center justify-content-center bg-primary text-white fs-3 fw-bold border border-white border-4 me-1"
+                      style="width: 4rem; height: 4rem"
+                    >
+                      3
+                    </div>
+                    <div class="text-muted fw-light mt-1">Шаг 3</div>
+                  </dt>
+                  <dd class="col">
+                    <div class="card rounded-0 bg-light py-4 px-5 mb-5">
+                      <h3>Согласование договора</h3>
+                      <p class="text-muted mb-0">
+                        Связываемся с нашими партнерами, которые выставляют вам
+                        счета.
+                      </p>
+                    </div>
+                  </dd>
+                </div>
+
+                <div class="row">
+                  <dt class="col-auto text-center">
+                    <div
+                      class="d-flex rounded-circle align-items-center justify-content-center bg-primary text-white fs-3 fw-bold border border-white border-4 me-1"
+                      style="width: 4rem; height: 4rem"
+                    >
+                      4
+                    </div>
+                    <div class="text-muted fw-light mt-1">Шаг 4</div>
+                  </dt>
+                  <dd class="col">
+                    <div class="card rounded-0 bg-light py-4 px-5 mb-5">
+                      <h3>Заключение и оформление договора</h3>
+                      <p class="text-muted mb-0">
+                        После оплаты партнеры оформляют договоры страхования
+                        и все необходимые документы и направляют их вам.
+                      </p>
+                    </div>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="py-5 d-flex align-items-center justify-content-center min-vh-100 text-center bg-light section-shadow-border"
+      >
+        <div class="container">
+          <div class="row justify-content-center text-center mb-2 mb-lg-4">
+            <div class="col-10 text-center mx-auto">
+              <h2 class="display-2 fw-bold mb-5">Отзывы</h2>
+              <p class="lead-custom mb-4">
+                Наши клиенты доверяют нам
+                <strong>страхование своих перевозок</strong> по маршруту
+                <strong>Европа — Азия</strong>. Мы гордимся тем, что помогаем
+                <strong>транспортным компаниям</strong>,
+                <strong>экспедиторам</strong> и <strong
+                  >грузоотправителям</strong
+                >
+                <em>снижать риски</em>,
+                <em>оптимизировать затраты</em> и получать
+                <strong>надёжную защиту</strong> на всём пути следования. Вот
+                что они говорят о нас.
+              </p>
+            </div>
+          </div>
+          <div class="row g-xl-5 py-4">
+            <div class="col-md-12">
+              <div class="mx-0 mx-xl-3 py-3 py-md-0 text-center">
+                <div class="text-primary mb-md-4 mb-2">
+                  <svg
+                    class="bi bi-quote"
+                    fill="currentColor"
+                    height="48"
+                    viewbox="0 0 16 16"
+                    width="48"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z"
+                    ></path>
+                  </svg>
+                </div>
+                <h4 class="h2 mb-3">
+                  Оптимизация страховых затрат для крупного логистического
+                  оператора
+                </h4>
+                <p class="mb-4">
+                  Наша компания занимается
+                  <strong>международными грузоперевозками</strong> и ранее
+                  сталкивалась с <em>высокой стоимостью страхования</em>
+                  в разных странах, сложностью оформления полисов и
+                  <em>рисками при пересечении границ</em>. Нам нужно было
+                  <strong>снизить расходы</strong>, упростить процесс оформления
+                  и обеспечить <strong>полное покрытие рисков</strong> по всему
+                  маршруту. Обратившись в <strong>IBB</strong>, мы смогли
+                  оформить все необходимые страховки (<em
+                    >ОСАГО, Зелёная карта, грузовое страхование</em
+                  >) <strong>в одном месте</strong>. Нам предоставили
+                  <strong>персонального менеджера</strong>, который сопровождал
+                  нас на всех этапах. В результате мы
+                  <strong>снизили страховые затраты на 25%</strong>,
+                  <em>сократили время оформления документов на 70%</em> и теперь
+                  уверены в <strong>полной страховой защите</strong> на всём
+                  маршруте.
+
+                  <small
+                    >*Все страховки оформлены в соответствии с законодательством
+                    стран транзита.</small
+                  >
+                </p>
+
+                <h5 class="mb-1 fw-bold">John Doe</h5>
+                <div class="text-muted">Graphic Designer</div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="mx-0 mx-xl-3 py-3 py-md-0 text-center">
+                <div class="text-primary mb-md-4 mb-2">
+                  <svg
+                    class="bi bi-quote"
+                    fill="currentColor"
+                    height="48"
+                    viewbox="0 0 16 16"
+                    width="48"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z"
+                    ></path>
+                  </svg>
+                </div>
+                <h4 class="h2 mb-3">
+                  Упрощение оформления страховок для индивидуального перевозчика
+                </h4>
+                <p class="mb-4">
+                  Я — <strong>индивидуальный перевозчик</strong>, работаю
+                  на маршруте <strong>Казахстан — Россия — Китай</strong>.
+                  Раньше страхование приходилось оформлять в <em
+                    >разных компаниях</em
+                  >, что занимало <em>много времени</em> и не всегда было
+                  выгодно. Мне нужно было <strong>решение</strong>, которое
+                  позволило бы оформлять страховки
+                  <strong>в одном месте</strong>,
+                  <em>без лишних затрат и рисков</em>. В <strong>IBB</strong>
+                  мне предложили сразу
+                  <strong>весь пакет необходимых страховок</strong>, с
+                  <em>гибкими тарифами</em> и <em>прозрачными условиями</em>.
+                  Все документы были оформлены
+                  <strong>быстро и удалённо</strong>. В итоге я <strong
+                    >сэкономил 40% времени</strong
+                  >
+                  на оформлении страховок, получил
+                  <em>выгодные условия</em> и теперь
+                  <strong>не переживаю за покрытие рисков</strong> при каждом
+                  рейсе.
+                  <small
+                    >*Все страховки соответствуют требованиям стран
+                    транзита.</small
+                  >
+                </p>
+
+                <h5 class="mb-1 fw-bold">John Doe</h5>
+                <div class="text-muted">HR Manager</div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="mx-0 mx-xl-3 py-3 py-md-0 text-center">
+                <div class="text-primary mb-md-4 mb-2">
+                  <svg
+                    class="bi bi-quote"
+                    fill="currentColor"
+                    height="48"
+                    viewbox="0 0 16 16"
+                    width="48"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z"
+                    ></path>
+                  </svg>
+                </div>
+                <h4 class="h2 mb-3">
+                  Защита груза и снижение рисков при перевозках между Европой
+                  и Азией
+                </h4>
+                <p class="mb-4">
+                  Наша компания занимается
+                  <strong>международной торговлей</strong> и регулярно
+                  отправляет грузы по маршруту
+                  <strong>Европа — Центральная Азия</strong>. Основные проблемы
+                  заключались в <em>страховании грузов</em> с учётом
+                  <em>разных требований в странах транзита</em> и
+                  <em>долгом процессе оформления</em>. Обратившись в
+                  <strong>IBB</strong>, мы получили
+                  <strong>комплексное страхование</strong>:
+                  <em
+                    >ОСАГО, страхование грузов и ответственности перевозчика</em
+                  >. Все договоры были оформлены
+                  <strong>дистанционно, в одном месте</strong>. Благодаря этому
+                  мы <strong>обеспечили 100% страховое покрытие</strong>,
+                  <em>минимизировали финансовые риски</em> и
+                  <strong>сократили время оформления</strong> страховки
+                  <em>с нескольких недель до двух дней</em>.
+
+                  <small
+                    >*Страхование соответствует требованиям законодательства
+                    стран транзита.</small
+                  >
+                </p>
+
+                <h5 class="mb-1 fw-bold">John Doe</h5>
+                <div class="text-muted">Founder & CEO</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="py-5 d-flex align-items-center justify-content-center min-vh-100 section-shadow-border"
+      >
+        <div class="container">
+          <div class="row justify-content-center text-center mb-3">
+            <div class="col-10">
+              <h2 class="display-2 fw-bold">Часто задаваемые вопросы</h2>
+              <p class="lead-custom">
+                Мы собрали самые часто задаваемые вопросы, чтобы помочь вам
+                быстрее найти ответы. Если у вас есть другие вопросы, мы всегда
+                рады помочь!
+              </p>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-md-12">
+              <div class="accordion" id="Questions-accordion">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="Questions-headingOne">
+                    <button
+                      aria-controls="Questions-collapseOne"
+                      aria-expanded="false"
+                      class="accordion-button collapsed bg-light"
+                      data-bs-target="#Questions-collapseOne"
+                      data-bs-toggle="collapse"
+                      type="button"
+                    >
+                      <div class="text-muted me-3">
+                        <svg
+                          class="bi bi-question-circle-fill"
+                          fill="currentColor"
+                          height="24"
+                          viewbox="0 0 16 16"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"
+                          ></path>
+                        </svg>
+                      </div>
+                      Что такое International Brokers' Board (IBB)?
+                    </button>
+                  </h2>
+                  <div
+                    aria-labelledby="Questions-headingOne"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#Questions-accordion"
+                    id="Questions-collapseOne"
+                  >
+                    <div class="accordion-body">
+                      IBB — это международная ассоциация страховых посредников,
+                      объединяющая брокеров и агентов со всего мира.
+                      Мы предоставляем платформу для сотрудничества, обмена
+                      опытом и продвижения передовых страховых решений.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="Questions-headingTwo">
+                    <button
+                      aria-controls="Questions-collapseTwo"
+                      aria-expanded="false"
+                      class="accordion-button collapsed bg-light"
+                      data-bs-target="#Questions-collapseTwo"
+                      data-bs-toggle="collapse"
+                      type="button"
+                    >
+                      <div class="text-muted me-3">
+                        <svg
+                          class="bi bi-question-circle-fill"
+                          fill="currentColor"
+                          height="24"
+                          viewbox="0 0 16 16"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"
+                          ></path>
+                        </svg>
+                      </div>
+                      Какую помощь вы оказываете в страховании?
+                    </button>
+                  </h2>
+                  <div
+                    aria-labelledby="Questions-headingTwo"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#Questions-accordion"
+                    id="Questions-collapseTwo"
+                  >
+                    <div class="accordion-body">
+                       — Помогаем подобрать подходящие страховые продукты.
+                      — Упрощаем оформление полисов для международных маршрутов.
+                      — Консультируем по вопросам законодательных требований
+                      в странах транзита. — Сопровождаем клиентов 24/7 в случае
+                      страховых случаев.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="Questions-headingThree">
+                    <button
+                      aria-controls="Questions-collapseThree"
+                      aria-expanded="false"
+                      class="accordion-button collapsed bg-light"
+                      data-bs-target="#Questions-collapseThree"
+                      data-bs-toggle="collapse"
+                      type="button"
+                    >
+                      <div class="text-muted me-3">
+                        <svg
+                          class="bi bi-question-circle-fill"
+                          fill="currentColor"
+                          height="24"
+                          viewbox="0 0 16 16"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"
+                          ></path>
+                        </svg>
+                      </div>
+                      Какие услуги предоставляют члены IBB?
+                    </button>
+                  </h2>
+                  <div
+                    aria-labelledby="Questions-headingThree"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#Questions-accordion"
+                    id="Questions-collapseThree"
+                  >
+                    <div class="accordion-body">
+                      Наши партнеры предлагают комплекс страховых решений,
+                      включая: — Обязательное страхование гражданской
+                      ответственности (ОСАГО). — Страхование грузов и автопарка
+                      (КАСКО). -Добровольное страхование ответственности.
+                      — Медицинское страхование для сотрудников. — Консультации
+                      по управлению рисками.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="Questions-headingFour">
+                    <button
+                      aria-controls="Questions-collapseFour"
+                      aria-expanded="false"
+                      class="accordion-button collapsed bg-light"
+                      data-bs-target="#Questions-collapseFour"
+                      data-bs-toggle="collapse"
+                      type="button"
+                    >
+                      <div class="text-muted me-3">
+                        <svg
+                          class="bi bi-question-circle-fill"
+                          fill="currentColor"
+                          height="24"
+                          viewbox="0 0 16 16"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"
+                          ></path>
+                        </svg>
+                      </div>
+                      В каких странах работают члены IBB?
+                    </button>
+                  </h2>
+                  <div
+                    aria-labelledby="Questions-headingFour"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#Questions-accordion"
+                    id="Questions-collapseFour"
+                  >
+                    <div class="accordion-body">
+                      Мы предоставляем услуги в Европе, Азии, СНГ и других
+                      регионах. Наши основные партнёры находятся в странах
+                      с высоким спросом на международное страхование: Польша,
+                      Казахстан, Латвия, Узбекистан, Россия, Литва, Беларусь,
+                      Узбекистан, Грузия и другие.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="Questions-headingFour">
+                    <button
+                      aria-controls="Questions-collapseFour"
+                      aria-expanded="false"
+                      class="accordion-button collapsed bg-light"
+                      data-bs-target="#Questions-collapseFour"
+                      data-bs-toggle="collapse"
+                      type="button"
+                    >
+                      <div class="text-muted me-3">
+                        <svg
+                          class="bi bi-question-circle-fill"
+                          fill="currentColor"
+                          height="24"
+                          viewbox="0 0 16 16"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"
+                          ></path>
+                        </svg>
+                      </div>
+                      Какие преимущества даёт участие в IBB?
+                    </button>
+                  </h2>
+                  <div
+                    aria-labelledby="Questions-headingFour"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#Questions-accordion"
+                    id="Questions-collapseFour"
+                  >
+                    <div class="accordion-body">
+                       — Доступ к международной сети страховых партнёров. —
+                      Персонализированная поддержка и консультации. — Участие в
+                      обучающих программах и мероприятиях. — Прямой доступ
+                      к лучшим страховым продуктам и решениям. — Сотрудничество
+                      с IBB повышает доверие клиентов и партнёров!
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="Questions-headingFour">
+                    <button
+                      aria-controls="Questions-collapseFour"
+                      aria-expanded="false"
+                      class="accordion-button collapsed bg-light"
+                      data-bs-target="#Questions-collapseFour"
+                      data-bs-toggle="collapse"
+                      type="button"
+                    >
+                      <div class="text-muted me-3">
+                        <svg
+                          class="bi bi-question-circle-fill"
+                          fill="currentColor"
+                          height="24"
+                          viewbox="0 0 16 16"
+                          width="24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"
+                          ></path>
+                        </svg>
+                      </div>
+                      Как стать участником ассоциации?
+                    </button>
+                  </h2>
+                  <div
+                    aria-labelledby="Questions-headingFour"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#Questions-accordion"
+                    id="Questions-collapseFour"
+                  >
+                    <div class="accordion-body">
+                      Для вступления в IBB необходимо подать заявку через наш
+                      сайт. Мы рассматриваем заявки от страховых брокеров,
+                      агентов и компаний, соответствующих нашим профессиональным
+                      стандартам. Свяжитесь с нами: membership@ibb.expert
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section class="py-5" aria-labelledby="cta-heading">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 mt-4 mt-lg-0">
-        <h2 id="cta-heading" class="display-2 fw-bold mb-5 text-center">
-          Свяжитесь с нами
-        </h2>
-        <p class="lead-custom mb-4">
-          Мы уверены, что совместными усилиями мы сможем создать
-          <strong>надежную</strong> и <strong>эффективную</strong> систему
-          страхования для международных автоперевозок и грузоотправителей.
-          Присоединяйтесь к нашей сети и давайте вместе обеспечим
-          <em>безопасность</em> и <em>стабильность</em> вашего бизнеса в
-          процессе перевозок между Европой и Азией. Мы готовы предложить вам
-          <strong>комплексные решения</strong>, которые помогут снизить риски и
-          <small>оптимизировать расходы</small> на страхование.
-          <strong>Готовы к сотрудничеству?</strong> Свяжитесь с нами, и мы
-          обсудим, как наши эксперты могут поддержать ваш бизнес на пути к
-          общему успеху!
-        </p>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 mt-4 mt-lg-0">
+              <h2 id="cta-heading" class="display-2 fw-bold mb-5 text-center">
+                Свяжитесь с нами
+              </h2>
+              <p class="lead-custom mb-4">
+                Мы уверены, что совместными усилиями мы сможем создать
+                <strong>надежную</strong> и <strong>эффективную</strong> систему
+                страхования для международных автоперевозок и грузоотправителей.
+                Присоединяйтесь к нашей сети и давайте вместе обеспечим
+                <em>безопасность</em> и <em>стабильность</em> вашего бизнеса в
+                процессе перевозок между Европой и Азией. Мы готовы предложить
+                вам <strong>комплексные решения</strong>, которые помогут
+                снизить риски и
+                <small>оптимизировать расходы</small> на страхование.
+                <strong>Готовы к сотрудничеству?</strong> Свяжитесь с нами, и мы
+                обсудим, как наши эксперты могут поддержать ваш бизнес на пути к
+                общему успеху!
+              </p>
 
-        <div class="flex flex-column align-items-center text-primary">
-          <a
-            class="d-block text-center text-decoration-none mb-3 fs-1 fw-bold"
-            href="tel:+1(234)%20567-89-01"
-            >+1(234) 567-89-10</a
-          >
-          <a
-            class="d-block text-center text-decoration-none fs-1 fw-bold"
-            href="mailto:info@ibb.expert"
-            >info@ibb.expert</a
-          >
+              <div class="flex flex-column align-items-center text-primary">
+                <a
+                  class="d-block text-center text-decoration-none mb-3 fs-1 fw-bold"
+                  href="tel:+1(234)%20567-89-01"
+                  >+1(234) 567-89-10</a
+                >
+                <a
+                  class="d-block text-center text-decoration-none fs-1 fw-bold"
+                  href="mailto:info@ibb.expert"
+                  >info@ibb.expert</a
+                >
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+      </section>
     </main>
     <footer class="py-3 my-4">
-  <div class="container">
-    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-      <li class="nav-item">
-        <a href="#" class="nav-link px-2 text-body-secondary">В начало</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link px-2 text-body-secondary">О нас</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link px-2 text-body-secondary"
-          >Наши преимущества</a
-        >
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link px-2 text-body-secondary"
-          >Виды страхования</a
-        >
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link px-2 text-body-secondary">Почему мы?</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link px-2 text-body-secondary"
-          >Как это работает</a
-        >
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link px-2 text-body-secondary">Отзывы</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link px-2 text-body-secondary"
-          >Часто задаваемые вопросы</a
-        >
-      </li>
-    </ul>
-    <p class="text-center text-body-secondary">© 2025 IBB.EXPERT</p>
-  </div>
-</footer>
+      <div class="container">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary">В начало</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary">О нас</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary"
+              >Наши преимущества</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary"
+              >Виды страхования</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary">Почему мы?</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary"
+              >Как это работает</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary">Отзывы</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2 text-body-secondary"
+              >Часто задаваемые вопросы</a
+            >
+          </li>
+        </ul>
+        <p class="text-center text-body-secondary">© 2025 IBB.EXPERT</p>
+      </div>
+    </footer>
 
+    <noscript
+      ><link rel="stylesheet" href="css/vendor.815c03d4.css"
+    /></noscript>
+    <noscript><link rel="stylesheet" href="css/main.db1b5e97.css" /></noscript>
   </body>
 </html>
