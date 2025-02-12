@@ -7,7 +7,6 @@ import plumber from "gulp-plumber";
 import autoprefixer from "gulp-autoprefixer";
 import notify from "gulp-notify";
 import { stream as critical } from "critical";
-
 const sass = gulpSass(dartSass);
 
 export const styles = () => {
@@ -45,11 +44,19 @@ export const generateCriticalCss = () => {
   return app.gulp
     .src("app/index.html")
     .pipe(
+      plumber(
+        notify.onError({
+          title: "Critical CSS",
+          message: "Error: <%= error.message %>",
+        })
+      )
+    )
+    .pipe(
       critical({
         base: "app/",
         inline: true,
         target: "index.html",
-        extract: true,
+        extract: false,
         css: ["app/css/main.css", "app/css/vendor.css"],
       })
     )
