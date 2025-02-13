@@ -61,6 +61,20 @@ main {
   transition: 0.3s, background-position 0.3s 0.3s, color 0.3s 0.3s;
 }
 
+section:not(.hero) {
+  -webkit-transition: opacity 1s, -webkit-transform 1s;
+  transition: opacity 1s, -webkit-transform 1s;
+  transition: transform 1s, opacity 1s;
+  transition: transform 1s, opacity 1s, -webkit-transform 1s;
+}
+
+.section--hidden {
+  opacity: 0;
+  -webkit-transform: translateY(8rem);
+  -ms-transform: translateY(8rem);
+  transform: translateY(8rem);
+}
+
 .hero-text-shadow {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), -2px -2px 5px rgba(0, 0, 0, 0.7);
 }

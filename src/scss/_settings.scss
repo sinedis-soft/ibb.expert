@@ -48,3 +48,12 @@ main {
   color: #fff;
   transition: 0.3s, background-position 0.3s 0.3s, color 0.3s 0.3s;
 }
+
+section:not(.hero) {
+  transition: transform 1s, opacity 1s;
+}
+
+.section--hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+}
