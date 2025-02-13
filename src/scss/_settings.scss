@@ -57,3 +57,7 @@ section:not(.hero) {
   opacity: 0;
   transform: translateY(8rem);
 }
+
+header {
+  scroll-margin-bottom: 50px;
+}
