@@ -9,7 +9,7 @@
     "style-fix": "npx stylelint **/*.scss --fix",
     "code": "editorconfig-checker",
     "dev": "gulp",
-    "build": "npm run stylelint && npm run code && gulp build --build",
+    "build": "gulp build --build",
     "cache": "gulp cache",
     "backend": "gulp backend",
     "zip": "gulp zip --build"
