@@ -53,6 +53,10 @@ section:not(.hero) {
   transition: transform 1s, opacity 1s;
 }
 
+.section-bg-blue-white {
+  background: linear-gradient(to right, lightblue, white);
+}
+
 .section--hidden {
   opacity: 0;
   transform: translateY(8rem);
